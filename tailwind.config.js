@@ -4,6 +4,9 @@ module.exports = {
     "./src/**/*.{js,jsx,ts,tsx}",
   ],
   theme: {
+     container: {
+      padding: '2rem',
+    },
     extend: {
       backgroundImage: {
         
