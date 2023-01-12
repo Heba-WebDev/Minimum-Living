@@ -9,13 +9,13 @@ export default function Hero() {
       <div className="flex self-center">
         <h1
           className="text-white text-center md:text-left 
-        text-5xl lg:text-5xl antialiased"
+        text-5xl lg:text-5xl antialiased font-bold"
         >
           The most affortable place to stay in the san franciso bay area.
         </h1>
       </div>
 
-      <div className="object-fill max-w-xs mx-auto grid gap-3">
+      <div className="object-fill max-w-xs mx-auto grid gap-3 border-gray-300">
 
         <img src={Rectangle1} className="rounded-xl" />
         

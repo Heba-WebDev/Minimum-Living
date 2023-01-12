@@ -2,6 +2,15 @@
 import logo1 from '../Assets/Images/logo 1.png';
 import hamburgeriocn from '../Assets/Images/hamburgericon.png';
 
+/*
+
+flex flex-col lg:flex-row gap-3 list-none lg:ml-auto bg-white lg:bg-transparent p-5 lg:p-0
+         w-11/12 md:w-9/12 lg:w-fit top-40 left-1/2 
+         transform   -translate-y-1/2  -translate-x-1/2 lg:-translate-x-0 
+         lg:-translate-y-0 mx-auto lg:mx-0 absolute lg:relative rounded-xl left-5 lg:left-auto top-16 lg:top-auto
+         text-center lg:text-start
+*/
+
 import { useState } from "react";
 
 export default function Navbar() {
@@ -13,7 +22,7 @@ export default function Navbar() {
              <nav className='relative px-2 py-3 mb-3'>
 
              {/* The container wrapping navbar */}
-             <div className='container max-w-3xl md:w-3/4 py-2
+             <div className='container max-w-3xl md:w-3/4 py-2 
               lg:border-b mx-auto px-4 flex flex-wrap items-center justify-between '>
               {/* The div with the logo and hamburger menu icon */}
             <div className="w-full relative flex justify-between lg:w-auto lg:static lg:block lg:justify-start">
@@ -29,11 +38,11 @@ export default function Navbar() {
            {/* The navbar's list */}
 
        <div   className={  "lg:flex flex-grow items-center self-end" +  (navbarOpen ? " flex" : " hidden")}
-         id="example-navbar-danger">
+         id="example-navbar-danger ">
 
-         <ul className="flex flex-col lg:flex-row gap-3 list-none lg:ml-auto bg-white lg:bg-transparent p-5 lg:p-0
-         w-11/12 md:w-9/12 lg:w-fit top-40 left-1/2 transform -translate-x-1/2 lg:-translate-x-0 
-         -translate-y-1/2 lg:-translate-y-0 mx-auto lg:mx-0 absolute lg:relative rounded-xl left-5 lg:left-auto top-16 lg:top-auto
+         <ul className="flex flex-col lg:flex-row gap-3 list-none lg:ml-auto bg-white lg:bg-transparent py-10 lg:p-0
+         top-[90%] left-[5%] w-[90%]   lg:w-fit
+            absolute lg:relative rounded-xl left-5 lg:left-auto lg:top-auto
          text-center lg:text-start">
 
          <li className="nav-item"><a href='#' className='font-normal lg:font-extralight 

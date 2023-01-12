@@ -9,11 +9,8 @@ module.exports = {
       
       padding: '2rem',
     },
-    extend: {
-      backgroundImage: {
-        
-       
-      },
+    extend:
+     {
       gridTemplateColumns: {
         // Simple 16 column grid
         '16': 'repeat(auto-fit, minmax(250px, 1fr));',
