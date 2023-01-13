@@ -1,4 +1,9 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap');
 
+
+* {
+    font-family: 'Inter';
+}
 
 .hero {
     background: linear-gradient(0deg, rgba(59, 59, 59, 0.3), rgba(95, 95, 95, 0.3)), url(/src//Assets//Images/herobg.png);
@@ -12,7 +17,5 @@
     max-width: 90px;
 
 }
-.parent {
-    border: 1px solid yellow;
-}
+
 
