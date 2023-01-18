@@ -3,13 +3,13 @@ import magnifyingglass from "../Assets/Images/magnifyingglass.png";
 export default function Hero() {
   return (
     <div
-      className="container mx-auto max-w-3xl md:w-3/4 py-2 px-4 flex flex-wrap items-center 
+      className="container mx-auto max-w-3xl md:w-3/4 py-2 px-4 items-center 
          justify-between grid grid-cols-16 gap-4 py-12"
     >
-      <div className="flex flex-wrap">
+      <div className="">
         <h1
           className="text-white text-center md:text-left 
-        text-5xl lg:text-5xl antialiased font-bold"
+        text-4xl lg:text-5xl antialiased font-bold"
         >
           The most affortable place to stay in the san franciso bay area.
         </h1>
@@ -18,7 +18,7 @@ export default function Hero() {
       <div className="object-fill max-w-xs mx-auto grid gap-3 border-gray-300">
         <img src={Rectangle1} className="rounded-xl" />
 
-        <div className="px-4 px-2 lg:px-4 py-3 bg-white rounded-xl">
+        <div className="px-[8px]  md:px-2 lg:px-4 py-2 md:py-3 bg-white rounded">
           <form className="grid grid-cols-20 border border-solid border-gray-300">
             <div className="bg-gray-100 border-r border-gray-300">
               <label htmlFor="types"></label>

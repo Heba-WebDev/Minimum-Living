@@ -10,8 +10,8 @@ export default function Benefits() {
   return (
     <div className="container mx-auto max-w-3xl md:w-3/4 py-12">
       <div>
-        <h2 className="text-black font-bold text-2xl pb-6">
-          Minimum living cost takes care of everything
+        <h2 className="text-black font-bold text-lg md:text-2xl pb-6">
+          <span className="border-b-2 border-b-red-500">Minimum living cost</span> takes care of everything
         </h2>
       </div>
 
@@ -25,7 +25,7 @@ export default function Benefits() {
        
 
 
-        <section className="grid grid-cols-18 md:grid-cols-19 gap-2 justify-between py-8">
+        <section className="grid grid-cols-18 md:grid-cols-19 gap-y-8 gap-x-2 justify-between py-10">
 
         <div className="grid gap-1 md:gap-2 justify-self-center">
             <div className="w-14 shadow-2xl rounded-lg flex items-center justify-content-center">
@@ -33,7 +33,7 @@ export default function Benefits() {
                 <RiMoneyDollarCircleLine className="fill-red-500 p-2 " size={'58px'}/>
             </div>
             <div>
-            <p className="max-w-[12ch]">Pay as Little as possible!</p>
+            <p className="max-w-[12ch] leading-5">Pay as Little as possible!</p>
             </div>
           </div>
 
@@ -42,7 +42,7 @@ export default function Benefits() {
                 <FaHospital className="fill-red-500 p-2 " size={'58px'}/>
             </div>
             <div>
-            <p className="max-w-[12ch]">Enjoy wisdom of community!</p>
+            <p className="max-w-[12ch] leading-5">Enjoy wisdom of community!</p>
             </div>
           </div>
 
@@ -52,7 +52,7 @@ export default function Benefits() {
                 <BiLayer className="fill-red-500 p-2 " size={'58px'}/>
             </div>
             <div>
-            <p className="max-w-[12ch]">Let's somebody else take care of Landlord!</p>
+            <p className="max-w-[12ch] leading-5">Let somebody else take care!</p>
             </div>
           </div>
 
@@ -62,7 +62,7 @@ export default function Benefits() {
                 <RiPlantLine className="fill-red-500 p-2 " size={'58px'}/>
             </div>
             <div>
-            <p className="max-w-[12ch]">Enjoy peaceful Environment!</p>
+            <p className="max-w-[12ch] leading-5">Enjoy peaceful Environment!</p>
             </div>
           </div>
 
@@ -71,7 +71,7 @@ export default function Benefits() {
                 <RiShieldStarLine className="fill-red-500 p-2 " size={'58px'}/>
             </div>
             <div>
-            <p className="max-w-[12ch]">Stay Safe! Save Money!</p>
+            <p className="max-w-[12ch] leading-5">Stay Safe! Save Money!</p>
             </div>
           </div>
 
@@ -81,7 +81,7 @@ export default function Benefits() {
                 <GiPayMoney className="fill-red-500 p-2 " size={'58px'}/>
             </div>
             <div>
-            <p className="max-w-[12ch]">Pay for what you use !</p>
+            <p className="max-w-[12ch] leading-5">Pay for what you use !</p>
             </div>
           </div>
 

@@ -15,7 +15,7 @@ module.exports = {
         // Simple 16 column grid
         '16': 'repeat(auto-fit, minmax(250px, 1fr));',
         '20': '1fr, 1fr, 40px',
-        '18': 'repeat(auto-fit, minmax(140px, 1fr));',
+        '18': 'repeat(auto-fit, minmax(110px, 1fr));',
         '19': 'repeat(auto-fit, minmax(180px, 1fr));',
       },
     },

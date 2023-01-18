@@ -10,8 +10,8 @@ export default function Property({photo, title, type, rent, bed, bath, rooms}) {
     return(
         <div className="bg-white rounded-xl grid">
             <img src={photo} className='rounded-t-xl'/>
-            <h3 className='py-2 px-2'>{title}</h3>
-            <small className='px-2 text-gray-400'>{type}</small>
+            <h3 className='py-2 px-2 text-sm md:text-lg'>{title}</h3>
+            <small className='px-2 text-gray-400 text-xs'>{type}</small>
             <h4 className='px-2 pb-2 text-red-500 font-bold'>{rent}</h4>
             <div className='grid grid-cols-3 border-t border-gray-100'>
             <div className='flex justify-center gap-2 py-3 border-r border-gray-100'>

@@ -13,8 +13,8 @@ export default function Properties() {
         <div className="grid container mx-auto max-w-3xl md:w-3/4 py-12">
         
         <div className="flex justify-between items-center">
-            <h2 className="text-black font-bold text-xl md:text-2xl">list of properties</h2>
-            <button className="bg-red-500 text-white text-sm p-1 md:p-2  rounded">View All Property</button>
+            <h2 className="text-black font-bold text-lg md:text-xl lg:text-2xl">list of properties</h2>
+            <button className="bg-red-500 text-white text-[14px] p-1 md:p-2  rounded">View All Property</button>
         </div>
 
         <div className="grid grid-cols-18 md:grid-cols-19 gap-5 justify-between py-8">

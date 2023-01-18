@@ -7,6 +7,7 @@ import Properties from './Components/Properties';
 import Flexibility from './Components/Flexibility';
 import AddProperty from './Components/AddProperty';
 import Footer from './Components/Footer';
+import Testimonials from './Components/Testimonials';
 function App() {
   return (
     <div className="">
@@ -15,6 +16,7 @@ function App() {
       <Properties />
       <Flexibility />
       <AddProperty />
+      <Testimonials />
       <Footer />
     </div>
   );
