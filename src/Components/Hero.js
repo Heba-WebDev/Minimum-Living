@@ -20,23 +20,23 @@ export default function Hero() {
 
         <div className="px-[8px]  md:px-2 lg:px-4 py-2 md:py-3 bg-white rounded">
           <form className="grid grid-cols-20 border border-solid border-gray-300">
-            <div className="bg-gray-100 border-r border-gray-300">
+            <div className="bg-gray-100 border-r border-gray-300 px-1">
               <label htmlFor="types"></label>
-              <select id="types" className="bg-gray-100">
-                <option value="">All types</option>
-                <option value="room">Room</option>
-                <option value="apartment">Apartment</option>
-                <option value="villa">Villa</option>
+              <select id="types" className="bg-gray-100 w-full">
+                <option value="">Properties</option>
+                <option value="room">Penthouse</option>
+                <option value="apartment">Villa</option>
+                <option value="villa">Apartment</option>
               </select>
             </div>
 
-            <div className="bg-gray-100">
+            <div className="bg-gray-100 px-1">
               <label htmlFor="neighborhood"></label>
-              <select id="neighborhood" className="bg-gray-100">
-                <option value="">Neighborhood</option>
-                <option value="sanjose">San Jose</option>
-                <option value="oakland">Oakland</option>
-                <option value="silliconvalley">Silicon Valley</option>
+              <select id="neighborhood" className="bg-gray-100 w-full">
+                <option value="">City</option>
+                <option value="dubai">Dubai</option>
+                <option value="abudhabi">Abu Dhabi</option>
+                <option value="sharjah">Sharjah</option>
               </select>
             </div>
             <button className="bg-blue-400 w-full flex justify-center items-center">

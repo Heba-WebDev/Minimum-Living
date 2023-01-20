@@ -1,24 +1,28 @@
 
 import Property from "./Property";
-import unsplashEhIt1hg4Hs from '../Assets/Images/unsplashEhIt1hg4Hs.png';
-import unsplash2d4lAQAlbDA from '../Assets/Images/unsplash2d4lAQAlbDA.png';
-import unsplashuDtC1NLEzU from '../Assets/Images/unsplashuDtC1NLEzU.png';
-import unsplashKQgrVfR3r74 from '../Assets/Images/unsplashKQgrVfR3r74.png';
-import unsplashT6d96Qrb5MY from '../Assets/Images/unsplashT6d96Qrb5MY.png';
+// import unsplashEhIt1hg4Hs from '../Assets/Images/unsplashEhIt1hg4Hs.png';
+// import unsplash2d4lAQAlbDA from '../Assets/Images/unsplash2d4lAQAlbDA.png';
+// import unsplashuDtC1NLEzU from '../Assets/Images/unsplashuDtC1NLEzU.png';
+// import unsplashKQgrVfR3r74 from '../Assets/Images/unsplashKQgrVfR3r74.png';
+// import unsplashT6d96Qrb5MY from '../Assets/Images/unsplashT6d96Qrb5MY.png';
 
-export default function Properties() {
+export default function Properties(props) {
 
+
+  console.log(props.propertiesList)
+  //const PropertiesTopSix = props.previewProperties;
+  const imagesBaseURL = '../Assets/Properties/9318028dd5f2o';
     return (
         <div className="bg-slate-50">
         <div className="grid container mx-auto md:max-w-3xl lg:max-w-5xl md:w-3/4 py-14">
-        
+        {/* <img src={`${imagesBaseURL}${props.propertiesList[0].image}.wepb`} /> */}
         <div className="flex justify-between items-center">
             <h2 className="text-black font-bold text-lg md:text-xl lg:text-2xl"><span className="border-b-2 border-b-red-500">List O</span>f Properties</h2>
             <button className="bg-red-500 text-white text-[12px] md:text-base py-1 px-3 md:py-2 md:px-4 rounded">View All Property</button>
         </div>
 
         <div className="grid grid-cols-18 md:grid-cols-19 gap-5 justify-between py-8">
-           <Property 
+           {/* <Property 
            photo={unsplashEhIt1hg4Hs}
            title="2578 Folsom street, san francisco, CA, 94110" 
            type="Private Room"
@@ -26,8 +30,21 @@ export default function Properties() {
            bed="4"
            bath="2"
            rooms="2"
-           />
-             <Property 
+           /> */}
+           {/* {PropertiesTopSix.map(property => {
+            return (
+              <Property key={property.id}
+            
+            title={property.location}
+            type={property.type}
+            rent={property.rent}
+            bedrooms={property.bedrooms}
+            bathrooms={property.bathroom}
+            size={property.size}
+            />
+            )
+           })} */}
+             {/* <Property 
              photo={unsplash2d4lAQAlbDA}
            title="2578 Folsom street, san francisco, CA, 94110" 
            type="Private Room"
@@ -71,7 +88,7 @@ export default function Properties() {
            bed="4"
            bath="2"
            rooms="2"
-           />
+           /> */}
         </div>
         
         <div className="grid grid-cols-5 border border-gray-300 border-solid w-72 mx-auto

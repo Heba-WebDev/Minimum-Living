@@ -5,7 +5,7 @@ import {CgHashtag} from 'react-icons/cg';
 
 
 
-export default function Property({photo, title, type, rent, bed, bath, rooms}) {
+export default function Property({photo, title, type, rent, bedrooms, bathrooms, size}) {
 
     return(
         <div className="bg-white rounded-xl grid">
@@ -16,15 +16,15 @@ export default function Property({photo, title, type, rent, bed, bath, rooms}) {
             <div className='grid grid-cols-3 border-t border-gray-100'>
             <div className='flex justify-center gap-1 py-3 border-r border-gray-100'>
               <BiBed />
-              <small>{bed}</small>
+              <small>{bedrooms}</small>
             </div>
             <div className='flex justify-center gap-1 py-3 border-r border-gray-100'>
               <FaBath />
-              <small>{bath}</small>
+              <small>{bathrooms}</small>
             </div>
             <div className='flex justify-center gap-1 py-3'>
               <CgHashtag />
-              <small>{rooms}</small>
+              <small>{size}</small>
             </div>
             </div>
         </div>

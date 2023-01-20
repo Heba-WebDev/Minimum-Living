@@ -26,8 +26,8 @@ export default function Testimonials() {
         {slider[sliderIndex]}
         <div className="flex px-4">
         {dots.map((dot, index) => (
-            index == sliderIndex ? <div className='text-red-500' onClick={() => handleSliderDots(index)}>{dot}</div>
-             : <div className='text-gray-300'onClick={() => handleSliderDots(index)} >{dot}</div>
+            index == sliderIndex ? <div key={index} className='text-red-500' onClick={() => handleSliderDots(index)}>{dot}</div>
+             : <div key={index} className='text-gray-300'onClick={() => handleSliderDots(index)} >{dot}</div>
         ))}
      </div>
      </div>
