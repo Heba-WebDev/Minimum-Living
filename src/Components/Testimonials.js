@@ -15,20 +15,23 @@ export default function Testimonials() {
     setSliderIndex(index)
    };
     return (
-    <div className="bg-red-50 py-2">
-   
+    <div className="bg-red-50 py-8 md:py-2 ">
+    <div className="lg:flex lg:flex-row-reverse md:max-w-xl lg:max-w-5xl mx-auto">
+
+    
      <div>
-     <img src={cover} />   
+     <img src={cover} className="md:max-w-xl md:mx-auto"/>   
      </div>   
-     <div>
+     <div className="">
         {slider[sliderIndex]}
-     </div>
-     <div className="flex px-4">
+        <div className="flex px-4">
         {dots.map((dot, index) => (
             index == sliderIndex ? <div className='text-red-500' onClick={() => handleSliderDots(index)}>{dot}</div>
              : <div className='text-gray-300'onClick={() => handleSliderDots(index)} >{dot}</div>
         ))}
      </div>
+     </div>
+    </div>
     </div>
     )
 }

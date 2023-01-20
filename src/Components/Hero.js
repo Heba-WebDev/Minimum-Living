@@ -3,7 +3,7 @@ import magnifyingglass from "../Assets/Images/magnifyingglass.png";
 export default function Hero() {
   return (
     <div
-      className="container mx-auto max-w-3xl md:w-3/4 py-2 px-4 items-center 
+      className="container mx-auto md:max-w-3xl lg:max-w-5xl md:w-3/4 py-2 px-4 items-center 
          justify-between grid grid-cols-16 gap-4 py-12"
     >
       <div className="">

@@ -12,7 +12,7 @@ export default function Navbar() {
       <nav className="relative px-2 py-3 mb-3">
         {/* The container wrapping navbar */}
         <div
-          className="container max-w-3xl md:w-3/4 py-2 
+          className="container md:max-w-3xl lg:max-w-5xl md:w-3/4 py-2 
               lg:border-b mx-auto px-4 flex flex-wrap items-center justify-between "
         >
           {/* The div with the logo and hamburger menu icon */}

@@ -6,7 +6,7 @@ import { useState } from "react";
 export default function Headers() {
     
     return (
-        <header className="hero w-screen h-full py-5 pb-8">
+        <header className="hero h-full py-5 pb-8">
 
          <Navbar />
          <Hero />
