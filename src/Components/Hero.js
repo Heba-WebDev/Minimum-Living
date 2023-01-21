@@ -1,12 +1,35 @@
 import Rectangle1 from "../Assets/Images/Rectangle 1.png";
 import magnifyingglass from "../Assets/Images/magnifyingglass.png";
+import { useState } from "react";
+
+
 export default function Hero() {
+
+  const [searchProperty, setSearchProperty]= useState({
+    type: "",
+    city: "",
+  });
+
+  function handleSearchProperty(event) {
+    event.preventDefault();
+  };
+
+  function handleChange(event) {
+    setSearchProperty(prevState => {
+      return {
+        ...prevState,
+        [event.target.name] : event.target.value,
+      }
+    })
+  }
+  
+
   return (
     <div
       className="container mx-auto md:max-w-3xl lg:max-w-5xl md:w-3/4 py-2 px-4 items-center 
          justify-between grid grid-cols-16 gap-4 py-12"
     >
-      <div className="">
+      <div>
         <h1
           className="text-white text-center md:text-left 
         text-4xl lg:text-5xl antialiased font-bold"
@@ -21,25 +44,36 @@ export default function Hero() {
         <div className="px-[8px]  md:px-2 lg:px-4 py-2 md:py-3 bg-white rounded">
           <form className="grid grid-cols-20 border border-solid border-gray-300">
             <div className="bg-gray-100 border-r border-gray-300 px-1">
-              <label htmlFor="types"></label>
-              <select id="types" className="bg-gray-100 w-full">
+              <label htmlFor="type"></label>
+              <select 
+              id="type" 
+              name="type"
+              value={searchProperty.type}
+              onChange={handleChange}
+              className="bg-gray-100 w-full">
                 <option value="">Properties</option>
-                <option value="room">Penthouse</option>
-                <option value="apartment">Villa</option>
-                <option value="villa">Apartment</option>
+                <option value="penthouse">Penthouse</option>
+                <option value="villa">Villa</option>
+                <option value="apartment">Apartment</option>
               </select>
             </div>
 
             <div className="bg-gray-100 px-1">
-              <label htmlFor="neighborhood"></label>
-              <select id="neighborhood" className="bg-gray-100 w-full">
+            <label htmlFor="city"></label>
+              
+              <select 
+              id="city" 
+              name="city"
+              value={searchProperty.city}
+              onChange={handleChange}
+              className="bg-gray-100 w-full">
                 <option value="">City</option>
                 <option value="dubai">Dubai</option>
                 <option value="abudhabi">Abu Dhabi</option>
                 <option value="sharjah">Sharjah</option>
               </select>
             </div>
-            <button className="bg-blue-400 w-full flex justify-center items-center">
+            <button onClick={handleSearchProperty} className="bg-blue-400 w-full flex justify-center items-center">
               <img src={magnifyingglass} className="w-5" />
             </button>
           </form>

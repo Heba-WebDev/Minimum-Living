@@ -1,4 +1,4 @@
-
+import { useState, useEffect } from "react";
 import Property from "./Property";
 // import unsplashEhIt1hg4Hs from '../Assets/Images/unsplashEhIt1hg4Hs.png';
 // import unsplash2d4lAQAlbDA from '../Assets/Images/unsplash2d4lAQAlbDA.png';
@@ -8,8 +8,29 @@ import Property from "./Property";
 
 export default function Properties(props) {
 
+  const [propertiesList, setPropertiesList] = useState(null);
+  
+  
 
-  console.log(props.propertiesList)
+  const getData = () => {
+    fetch("data.json", {
+      headers: {
+        "Content-Type": "application/json",
+        Accept: "application/json",
+      },
+    })
+      .then(function (response) {
+        return response.json();
+      })
+      .then(function (myJson) {
+        setPropertiesList(myJson);
+      });
+  };
+
+  useEffect(() => {
+    getData();
+  }, []);
+
   //const PropertiesTopSix = props.previewProperties;
   const imagesBaseURL = '../Assets/Properties/9318028dd5f2o';
     return (
