@@ -1,20 +1,14 @@
-import { useState, useEffect } from "react";
-import Property from "./Property";
 
-// import unsplashEhIt1hg4Hs from '../Assets/Images/unsplashEhIt1hg4Hs.png';
-// import unsplash2d4lAQAlbDA from '../Assets/Images/unsplash2d4lAQAlbDA.png';
-// import unsplashuDtC1NLEzU from '../Assets/Images/unsplashuDtC1NLEzU.png';
-// import unsplashKQgrVfR3r74 from '../Assets/Images/unsplashKQgrVfR3r74.png';
-// import unsplashT6d96Qrb5MY from '../Assets/Images/unsplashT6d96Qrb5MY.png';
+import Property from "./Property"
+import { useEffect, useState } from "react";
+export default function AllProperties() {
 
-export default function Properties(props) {
-
-  //const [propertiesList, setPropertiesList] = useState(null);
+    //const [propertiesList, setPropertiesList] = useState(null);
   const [propertiesPreview, setPropertiesPreview] = useState(null);
   
 
   const getData = () => {
-    fetch("data.json", {
+    fetch("/data.json", {
       headers: {
         "Content-Type": "application/json",
         Accept: "application/json",
@@ -145,5 +139,5 @@ export default function Properties(props) {
         </div>
         </div>
     )
-
+       
 }

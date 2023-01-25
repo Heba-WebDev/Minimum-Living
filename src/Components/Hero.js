@@ -1,18 +1,21 @@
 import Rectangle1 from "../Assets/Images/Rectangle 1.png";
 import magnifyingglass from "../Assets/Images/magnifyingglass.png";
 import { useState } from "react";
+import { Navigate, useNavigate } from "react-router-dom";
 
+export default function Hero(props) {
 
-export default function Hero() {
-
+ 
+  const [error, SetError] = useState(false);
+  const navigatie = useNavigate();
+  
   const [searchProperty, setSearchProperty]= useState({
     type: "",
     city: "",
   });
 
-  function handleSearchProperty(event) {
-    event.preventDefault();
-  };
+
+
 
   function handleChange(event) {
     setSearchProperty(prevState => {
@@ -21,8 +24,18 @@ export default function Hero() {
         [event.target.name] : event.target.value,
       }
     })
+  };
+
+  function handleSearchProperty(event) {
+    event.preventDefault();
+    searchProperty.type && searchProperty.city ? 
+    navigatie("/search"):
+    SetError(true);
+  };
+
+  function handleFocus() {
+    SetError(false);
   }
-  
 
   return (
     <div
@@ -50,6 +63,7 @@ export default function Hero() {
               name="type"
               value={searchProperty.type}
               onChange={handleChange}
+              onFocus={handleFocus}
               className="bg-gray-100 w-full">
                 <option value="">Properties</option>
                 <option value="penthouse">Penthouse</option>
@@ -66,6 +80,7 @@ export default function Hero() {
               name="city"
               value={searchProperty.city}
               onChange={handleChange}
+              onFocus={handleFocus}
               className="bg-gray-100 w-full">
                 <option value="">City</option>
                 <option value="dubai">Dubai</option>
@@ -77,6 +92,9 @@ export default function Hero() {
               <img src={magnifyingglass} className="w-5" />
             </button>
           </form>
+          {error && 
+          <small className="text-red-500 flex justify-center pt-2">Please choose a property type and a city!</small>
+          }
         </div>
       </div>
     </div>
