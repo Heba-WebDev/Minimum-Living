@@ -10,28 +10,30 @@ import { useState, useEffect } from 'react';
 
 
 function App() {
-   //const [propertiesList, setPropertiesList] = useState(null);
-   const [properties, setProperties] = useState(null);
+  const [properties, setProperties] = useState(null);
   
 
-   const getData = () => {
-     fetch("data.json")
-       
-     
-       .then(function (response) {
-         return response.json();
-       })
-       .then(function (myJson) {
-         setProperties(myJson);
-       })
-       .catch(error => {
-         console.error(error);
-       });
-   };
- 
-   useEffect(() => {
-     getData();
-   }, []);
+  const getData = () => {
+    fetch("data.json", {
+      headers: {
+        "Content-Type": "application/json",
+        Accept: "application/json",
+      },
+    })
+      .then(function (response) {
+        return response.json();
+      })
+      .then(function (myJson) {
+        setProperties(myJson);
+      })
+      .catch(error => {
+        console.error(error);
+      });
+  };
+
+  useEffect(() => {
+    getData();
+  }, []);
 
   return (
  <Routes>

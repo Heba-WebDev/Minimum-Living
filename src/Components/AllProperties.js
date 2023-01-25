@@ -1,36 +1,26 @@
 
-import Property from "./Property"
+import Property from "./Property";
+import { Location, useLocation } from "react-router-dom";
+import {API} from '../API/Data';
 import { useEffect, useState } from "react";
 export default function AllProperties() {
 
-    //const [propertiesList, setPropertiesList] = useState(null);
-  const [propertiesPreview, setPropertiesPreview] = useState(null);
-  
-
-  const getData = () => {
-    fetch("/data.json", {
-      headers: {
-        "Content-Type": "application/json",
-        Accept: "application/json",
-      },
-    })
-      .then(function (response) {
-        return response.json();
-      })
-      .then(function (myJson) {
-        setPropertiesPreview(myJson.slice(0,6));
-      })
-      .catch(error => {
-        console.error(error);
-      });
-  };
-
-  useEffect(() => {
-    getData();
-  }, []);
+  const location = useLocation();
+  const [proeprties, setProperties] = useState(null);
  
 
-  //const PropertiesTopSix = props.previewProperties;
+  
+    async function fetchData() {
+       const results = await API.get()
+       setProperties(results)
+    };
+
+   useEffect(()=>{
+    fetchData();
+   }, [])
+   
+
+  
   const imagesBaseURL = '../Assets/Properties/9318028dd5f2o';
     return (
         <div className="bg-slate-50">
@@ -42,8 +32,8 @@ export default function AllProperties() {
         </div>
 
         <div className="grid grid-cols-18 md:grid-cols-19 gap-5 justify-between py-8">
-
-        {propertiesPreview && propertiesPreview.map((property) => {
+ 
+        {proeprties && proeprties.map((property) => {
  
             return (
               
@@ -57,85 +47,19 @@ export default function AllProperties() {
               size={property.size}
               />
             
-          )})}
+          )})} 
          
-           {/* <Property 
-           photo={unsplashEhIt1hg4Hs}
-           title="2578 Folsom street, san francisco, CA, 94110" 
-           type="Private Room"
-           rent="$1200/month"
-           bed="4"
-           bath="2"
-           rooms="2"
-           /> */}
-           {/* {PropertiesTopSix.map(property => {
-            return (
-              <Property key={property.id}
-            
-            title={property.location}
-            type={property.type}
-            rent={property.rent}
-            bedrooms={property.bedrooms}
-            bathrooms={property.bathroom}
-            size={property.size}
-            />
-            )
-           })} */}
-             {/* <Property 
-             photo={unsplash2d4lAQAlbDA}
-           title="2578 Folsom street, san francisco, CA, 94110" 
-           type="Private Room"
-           rent="$1200/month"
-           bed="4"
-           bath="2"
-           rooms="2"
-           />
-             <Property 
-             photo={unsplashT6d96Qrb5MY}
-           title="2578 Folsom street, san francisco, CA, 94110" 
-           type="Private Room"
-           rent="$1200/month"
-           bed="4"
-           bath="2"
-           rooms="2"
-           />
-             <Property 
-             photo={unsplashKQgrVfR3r74}
-           title="2578 Folsom street, san francisco, CA, 94110" 
-           type="Private Room"
-           rent="$1200/month"
-           bed="4"
-           bath="2"
-           rooms="2"
-           />
-             <Property 
-             photo={unsplashKQgrVfR3r74}
-           title="2578 Folsom street, san francisco, CA, 94110" 
-           type="Private Room"
-           rent="$1200/month"
-           bed="4"
-           bath="2"
-           rooms="2"
-           />
-             <Property 
-             photo={unsplashuDtC1NLEzU}
-           title="2578 Folsom street, san francisco, CA, 94110" 
-           type="Private Room"
-           rent="$1200/month"
-           bed="4"
-           bath="2"
-           rooms="2"
-           /> */}
+           
         </div>
         
-        <div className="grid grid-cols-5 border border-gray-300 border-solid w-72 mx-auto
+        {/* <div className="grid grid-cols-5 border border-gray-300 border-solid w-72 mx-auto
         rounded">
        <button className="flex justifiy-center border-r border-gray-300 p-2">First</button>
        <button className="border-r border-gray-300 p-2">1</button>
        <button className="border-r border-gray-300 p-2">2</button>
        <button className="border-r border-gray-300 p-2">3</button>
        <button className="p-2">Next</button>
-        </div>
+        </div> */}
         </div>
         </div>
     )

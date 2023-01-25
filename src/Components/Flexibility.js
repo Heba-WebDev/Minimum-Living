@@ -2,6 +2,7 @@ import Image2 from '../Assets/Images/Image 2.png';
 import unsplashnEtpvJjnPVo from '../Assets/Images/unsplashnEtpvJjnPVo.png';
 import unsplashXdWkFaHI97c from '../Assets/Images/unsplashXdWkFaHI97c.png';
 import unsplashuooMllXe6gE from '../Assets/Images/unsplashuooMllXe6gE.png';
+import { Link } from 'react-router-dom';
 /*
 h-56 w-44 
 h-44 w-44
@@ -52,8 +53,10 @@ export default function Flexibility() {
                 selective roommate finder option.
                  We provide you the flexibility that you most desire.
              </p>
+             <Link to="properties" className='w-1/2 mx-auto max-w-[158px]'>
              <button className="bg-red-500 text-white py-2 px-4 rounded-lg
-             text-sm w-1/2 mx-auto max-w-[158px]">Search Rooms</button>
+             text-sm ">Search Property</button>
+             </Link>
            </div>
         </div>
     )

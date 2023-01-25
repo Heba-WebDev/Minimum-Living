@@ -1,13 +1,13 @@
 import Rectangle1 from "../Assets/Images/Rectangle 1.png";
 import magnifyingglass from "../Assets/Images/magnifyingglass.png";
 import { useState } from "react";
-import { Navigate, useNavigate } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 
-export default function Hero(props) {
+export default function Hero() {
 
  
   const [error, SetError] = useState(false);
-  const navigatie = useNavigate();
+  const navigate = useNavigate();
   
   const [searchProperty, setSearchProperty]= useState({
     type: "",
@@ -29,7 +29,12 @@ export default function Hero(props) {
   function handleSearchProperty(event) {
     event.preventDefault();
     searchProperty.type && searchProperty.city ? 
-    navigatie("/search"):
+    navigate('/search', {
+      state: {
+       type: searchProperty.type,
+       city: searchProperty.city,
+      }
+    }):
     SetError(true);
   };
 
@@ -52,7 +57,7 @@ export default function Hero(props) {
       </div>
 
       <div className="object-fill max-w-xs mx-auto grid gap-3 border-gray-300">
-        <img src={Rectangle1} className="rounded-xl" />
+        <img src={Rectangle1} alt="" className="rounded-xl" />
 
         <div className="px-[8px]  md:px-2 lg:px-4 py-2 md:py-3 bg-white rounded">
           <form className="grid grid-cols-20 border border-solid border-gray-300">
@@ -89,7 +94,7 @@ export default function Hero(props) {
               </select>
             </div>
             <button onClick={handleSearchProperty} className="bg-blue-400 w-full flex justify-center items-center">
-              <img src={magnifyingglass} className="w-5" />
+              <img src={magnifyingglass} alt="" className="w-5" />
             </button>
           </form>
           {error && 
