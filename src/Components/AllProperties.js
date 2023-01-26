@@ -1,29 +1,33 @@
 
 import Property from "./Property";
-import { Location, useLocation } from "react-router-dom";
 import {API} from '../API/Data';
+import Pagination from "./Pagination";
 import { useEffect, useState } from "react";
 export default function AllProperties() {
 
-  const location = useLocation();
-  const [proeprties, setProperties] = useState(null);
- 
 
-  
+  const [properties, setProperties] = useState([]);
     async function fetchData() {
-       const results = await API.get()
-       setProperties(results)
+       const results = await API.get();
+       console.log(results)
+       setProperties(results);
     };
 
-   useEffect(()=>{
-    fetchData();
-   }, [])
+    useEffect(() => {
+      fetchData();
+    }, []);
+
+  const [currentPage, setCurrentPage] = useState(1);
+  const [showPerPage] = useState(6);
+  const indexOfLastShown = currentPage * showPerPage;
+  const indexOfFirstShown = indexOfLastShown - showPerPage;
+  const currentShownProperties = properties.slice(indexOfFirstShown, indexOfLastShown);
+  const pages = Math.ceil(properties.length / showPerPage);
    
 
-  
-  const imagesBaseURL = '../Assets/Properties/9318028dd5f2o';
+
     return (
-        <div className="bg-slate-50">
+        <div className="bg-slate-50 grid">
         <div className="grid container mx-auto md:max-w-3xl lg:max-w-5xl md:w-3/4 py-14">
     
         <div className="flex justify-between items-center">
@@ -33,7 +37,7 @@ export default function AllProperties() {
 
         <div className="grid grid-cols-18 md:grid-cols-19 gap-5 justify-between py-8">
  
-        {proeprties && proeprties.map((property) => {
+        {properties && currentShownProperties.map((property) => {
  
             return (
               
@@ -52,14 +56,14 @@ export default function AllProperties() {
            
         </div>
         
-        {/* <div className="grid grid-cols-5 border border-gray-300 border-solid w-72 mx-auto
+         <div className="grid grid-cols-auto
         rounded">
-       <button className="flex justifiy-center border-r border-gray-300 p-2">First</button>
-       <button className="border-r border-gray-300 p-2">1</button>
-       <button className="border-r border-gray-300 p-2">2</button>
-       <button className="border-r border-gray-300 p-2">3</button>
-       <button className="p-2">Next</button>
-        </div> */}
+       <Pagination 
+       currentPage = {currentPage}
+       setCurrentPage = {setCurrentPage}
+       pages = {pages}
+       />
+        </div>  
         </div>
         </div>
     )

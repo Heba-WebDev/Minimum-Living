@@ -1,46 +1,18 @@
-import './App.css';
+import "./App.css";
 
-//Components 
-import Home from './Components/Home';
-import Search from './Components/Search';
-// import Navbar from './Components/Navbar';
- import {Route, Routes} from 'react-router-dom';
-import AllProperties from './Components/AllProperties';
-import { useState, useEffect } from 'react';
-
+//Components
+import Home from "./Components/Home";
+import Search from "./Components/Search";
+import { Route, Routes } from "react-router-dom";
+import AllProperties from "./Components/AllProperties";
 
 function App() {
-  const [properties, setProperties] = useState(null);
-  
-
-  const getData = () => {
-    fetch("data.json", {
-      headers: {
-        "Content-Type": "application/json",
-        Accept: "application/json",
-      },
-    })
-      .then(function (response) {
-        return response.json();
-      })
-      .then(function (myJson) {
-        setProperties(myJson);
-      })
-      .catch(error => {
-        console.error(error);
-      });
-  };
-
-  useEffect(() => {
-    getData();
-  }, []);
-
   return (
- <Routes>
-  <Route path='/' index element={<Home />} /> 
-  <Route path='/search' element={<Search />} />
-  <Route path='/properties' element={<AllProperties />} />
- </Routes>
+    <Routes>
+      <Route path="/" index element={<Home />} />
+      <Route path="/search" element={<Search />} />
+      <Route path="/properties" element={<AllProperties />} />
+    </Routes>
   );
 }
 

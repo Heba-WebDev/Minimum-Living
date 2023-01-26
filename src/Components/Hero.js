@@ -4,39 +4,34 @@ import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 
 export default function Hero() {
-
- 
   const [error, SetError] = useState(false);
   const navigate = useNavigate();
-  
-  const [searchProperty, setSearchProperty]= useState({
+
+  const [searchProperty, setSearchProperty] = useState({
     type: "",
     city: "",
   });
 
-
-
-
   function handleChange(event) {
-    setSearchProperty(prevState => {
+    setSearchProperty((prevState) => {
       return {
         ...prevState,
-        [event.target.name] : event.target.value,
-      }
-    })
-  };
+        [event.target.name]: event.target.value,
+      };
+    });
+  }
 
   function handleSearchProperty(event) {
     event.preventDefault();
-    searchProperty.type && searchProperty.city ? 
-    navigate('/search', {
-      state: {
-       type: searchProperty.type,
-       city: searchProperty.city,
-      }
-    }):
-    SetError(true);
-  };
+    searchProperty.type && searchProperty.city
+      ? navigate("/search", {
+          state: {
+            type: searchProperty.type,
+            city: searchProperty.city,
+          },
+        })
+      : SetError(true);
+  }
 
   function handleFocus() {
     SetError(false);
@@ -63,43 +58,50 @@ export default function Hero() {
           <form className="grid grid-cols-20 border border-solid border-gray-300">
             <div className="bg-gray-100 border-r border-gray-300 px-1">
               <label htmlFor="type"></label>
-              <select 
-              id="type" 
-              name="type"
-              value={searchProperty.type}
-              onChange={handleChange}
-              onFocus={handleFocus}
-              className="bg-gray-100 w-full">
+              <select
+                id="type"
+                name="type"
+                value={searchProperty.type}
+                onChange={handleChange}
+                onFocus={handleFocus}
+                className="bg-gray-100 w-full"
+              >
                 <option value="">Properties</option>
-                <option value="penthouse">Penthouse</option>
-                <option value="villa">Villa</option>
-                <option value="apartment">Apartment</option>
+                <option value="Penthouse">Penthouse</option>
+                <option value="Villa">Villa</option>
+                <option value="Apartment">Apartment</option>
               </select>
             </div>
 
             <div className="bg-gray-100 px-1">
-            <label htmlFor="city"></label>
-              
-              <select 
-              id="city" 
-              name="city"
-              value={searchProperty.city}
-              onChange={handleChange}
-              onFocus={handleFocus}
-              className="bg-gray-100 w-full">
+              <label htmlFor="city"></label>
+
+              <select
+                id="city"
+                name="city"
+                value={searchProperty.city}
+                onChange={handleChange}
+                onFocus={handleFocus}
+                className="bg-gray-100 w-full"
+              >
                 <option value="">City</option>
-                <option value="dubai">Dubai</option>
-                <option value="abudhabi">Abu Dhabi</option>
-                <option value="sharjah">Sharjah</option>
+                <option value="Dubai">Dubai</option>
+                <option value="Abudhabi">Abu Dhabi</option>
+                <option value="Sharjah">Sharjah</option>
               </select>
             </div>
-            <button onClick={handleSearchProperty} className="bg-blue-400 w-full flex justify-center items-center">
+            <button
+              onClick={handleSearchProperty}
+              className="bg-blue-400 w-full flex justify-center items-center"
+            >
               <img src={magnifyingglass} alt="" className="w-5" />
             </button>
           </form>
-          {error && 
-          <small className="text-red-500 flex justify-center pt-2">Please choose a property type and a city!</small>
-          }
+          {error && (
+            <small className="text-red-500 flex justify-center pt-2">
+              Please choose a property type and a city!
+            </small>
+          )}
         </div>
       </div>
     </div>
