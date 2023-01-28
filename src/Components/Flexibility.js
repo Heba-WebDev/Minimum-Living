@@ -1,3 +1,4 @@
+import React from "react";
 import Image2 from '../Assets/Images/Image 2.png';
 import unsplashnEtpvJjnPVo from '../Assets/Images/unsplashnEtpvJjnPVo.png';
 import unsplashXdWkFaHI97c from '../Assets/Images/unsplashXdWkFaHI97c.png';

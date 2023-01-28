@@ -1,3 +1,4 @@
+import React from "react";
 import {HiLocationMarker} from 'react-icons/hi';
 import {BsTelephoneFill} from  'react-icons/bs';
 import {AiFillPrinter} from 'react-icons/ai';
@@ -17,7 +18,7 @@ export default function Footer() {
         <footer className="container mx-auto md:max-w-3xl lg:max-w-5xl md:w-3/4 py-12 grid">
             <div className='lg:grid grid-cols-2 justify-between'>
            
-           <small className='font-bold uppercase text-2xl flex justify-center lg:justify-start
+           <small className='font-bold uppercase text-lg md:text-2xl flex justify-center lg:justify-start
            items-center pb-4 md:pb-0'>Minimum Living Cost</small>
             
 
@@ -30,14 +31,14 @@ export default function Footer() {
              </div>
             </div>
              
-            <div className='flex gap-1 justify-center gap-9 py-4 px-1'>
-            <div className='flex'>
+            <div className='flex gap-1 justify-center lg:justify-between  gap-9 py-4 px-1'>
+            <div className='flex gap-1'>
               <BsTelephoneFill className='text-red-500'/>
-                <small>(123) 456-7890</small>
+                <small>(123)456-7890</small>
               </div>
-              <div className='flex'>
+              <div className='flex gap-1'>
               <AiFillPrinter className='text-red-500'/>
-                <small>(123) 456-7890</small>
+                <small>(123)456-7890</small>
               </div>
              </div>
             </div>
@@ -55,17 +56,19 @@ export default function Footer() {
             </div>
 
             <hr className='opacity-50'/>
-          <div className='items-center justify-between '>
-          <ul className='text-sm flex flex-row mx-auto md:text-left gap-2  justify-between py-8'>
-            <li className='uppercase'>About</li>
-            <li className='uppercase'>Contact us</li>
-            <li className='uppercase'>help</li>
-            <li className='uppercase'>privacy policy</li>
-            <li className='uppercase'>disclaimer</li>
+          <div className='items-center justify-between'>
+          <ul className='text-xs flex flex-col lg:flex-row justify-center mx-auto 
+          md:text-left gap-4 lg:gap-2  justify-between py-8 text-gray-500'>
+          <li className='uppercase flex justify-center'>About</li>
+            <li className='uppercase flex justify-center'>Contact us</li>
+            <li className='uppercase flex justify-center'>help</li>
+            <li className='uppercase flex justify-center'>privacy policy</li>
+            <li className='uppercase flex justify-center '>disclaimer</li>
 
             </ul>
 
-            <small className='text-gray-400 text-center md:flex justify-center lg:justify-end'>Copyright © {currentYear} Minimumlivingcost. All rights reserved</small>
+            <small className='text-[10px] md:text-[12px] text-gray-400 text-center flex justify-center
+            '>Copyright © {currentYear} Minimumlivingcost. All rights reserved</small>
           </div>
         </footer>
     )

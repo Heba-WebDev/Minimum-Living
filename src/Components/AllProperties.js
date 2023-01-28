@@ -1,4 +1,4 @@
-
+import React from "react";
 import Property from "./Property";
 import {API} from '../API/Data';
 import Pagination from "./Pagination";

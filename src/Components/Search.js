@@ -1,3 +1,4 @@
+import React from "react";
 import { useLocation } from "react-router-dom";
 import { useEffect, useState } from "react";
 import { API } from "../API/Data";
@@ -5,8 +6,8 @@ import Property from "./Property";
 
 export default function Search(props) {
   const location = useLocation();
-  const type = location?.state?.type;
-  const city = location?.state?.city;
+  const type = location.state.type;
+  const city = location.state.city;
   // const [properties, setProperties] = useState(null);
 
   // async function fetchProperties() {

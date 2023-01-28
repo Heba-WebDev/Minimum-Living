@@ -1,3 +1,4 @@
+import React from "react";
 import Rectangle1 from "../Assets/Images/Rectangle 1.png";
 import magnifyingglass from "../Assets/Images/magnifyingglass.png";
 import { useState } from "react";

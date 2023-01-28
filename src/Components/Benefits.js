@@ -1,3 +1,4 @@
+import React from "react";
 import unsplashoGmf8o53LeE from "../Assets/Images/unsplashoGmf8o53LeE.png";
 import { FaHospital } from "react-icons/fa";
 import { RiMoneyDollarCircleLine } from "react-icons/ri";

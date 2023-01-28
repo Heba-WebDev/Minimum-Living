@@ -1,6 +1,6 @@
 import { Link } from "react-router-dom";
 import Property from "./Property";
-
+import React from "react";
 export default function Properties({ properties }) {
   const imagesBaseURL = "../Assets/Properties/9318028dd5f2o";
 

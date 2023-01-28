@@ -1,11 +1,17 @@
+import React from "react";
 import Testimonial from "./Testimonial";
 import { useState } from "react";
 import {RxDotFilled} from 'react-icons/rx';
 import cover from '../Assets/Images/cover.png';
+import Ellipse4 from '../Assets/Images/Ellipse4.png';
+import jessica from '../Assets/Images/jessica.webp';
+import alex from '../Assets/Images/alex.jpeg';
 
 export default function Testimonials() {
     
-    const slider = [<Testimonial />, <Testimonial />, <Testimonial />];
+    const slider = [<Testimonial name="Harry Wilson" title="Property Owner" photo={Ellipse4} />,
+     <Testimonial name="Jessica Owne" title="Tenant" photo={jessica}/>,
+      <Testimonial name="Alex Mayor" title="Property Owner" photo={alex}/>];
     const dots = [<RxDotFilled size={20} className="hover:cursor-pointer"/>, 
     <RxDotFilled size={20}  className="hover:cursor-pointer"/>, 
     <RxDotFilled size={20} className="hover:cursor-pointer"/>];

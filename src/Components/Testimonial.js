@@ -1,7 +1,7 @@
 import { RiDoubleQuotesL } from "react-icons/ri";
-import Ellipse4 from '../Assets/Images/Ellipse4.png';
 
-export default function Testimonial() {
+import React from "react";
+export default function Testimonial({name, title, photo, format}) {
   return (
     <div className="bg-red-50 px-4 py-12">
       <div className="relative p-2">
@@ -16,10 +16,10 @@ export default function Testimonial() {
 
       </div>
       <div className="flex items-center gap-2">
-        <img src={Ellipse4} className="rounded-full w-14 border-2 border-red-500 border-solid"/>
+        <img src={photo} className="rounded-full w-14 border-2 border-red-500 border-solid"/>
         <div className="grid">
-            <small className="text-red-500 font-bold">Harry Wilson</small>
-            <small className="text-xs">Property Owner</small>
+            <small className="text-red-500 font-bold">{name}</small>
+            <small className="text-xs">{title}</small>
         </div>
       </div>
     </div>

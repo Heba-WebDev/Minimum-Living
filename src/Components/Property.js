@@ -1,3 +1,4 @@
+import React from "react";
 import {BiBed} from 'react-icons/bi';
 import {FaBath} from 'react-icons/fa';
 import {CgHashtag} from 'react-icons/cg';
