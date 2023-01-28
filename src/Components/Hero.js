@@ -38,7 +38,7 @@ export default function Hero() {
   }
 
   return (
-    <div
+    <article
       className="container mx-auto md:max-w-3xl lg:max-w-5xl md:w-3/4 py-2 px-4 items-center 
          justify-between grid grid-cols-16 gap-4 py-12"
     >
@@ -57,7 +57,9 @@ export default function Hero() {
         <div className="px-[8px]  md:px-2 lg:px-4 py-2 md:py-3 bg-white rounded">
           <form className="grid grid-cols-20 border border-solid border-gray-300">
             <div className="bg-gray-100 border-r border-gray-300 px-1">
-              <label htmlFor="type"></label>
+              <label htmlFor="type">
+                <span className="sr-only">Select a property</span>
+              </label>
               <select
                 id="type"
                 name="type"
@@ -74,7 +76,9 @@ export default function Hero() {
             </div>
 
             <div className="bg-gray-100 px-1">
-              <label htmlFor="city"></label>
+              <label htmlFor="city">
+                <span className="sr-only">Select a city</span>
+              </label>
 
               <select
                 id="city"
@@ -104,6 +108,6 @@ export default function Hero() {
           )}
         </div>
       </div>
-    </div>
+    </article>
   );
 }

@@ -1,18 +1,13 @@
-
-import Header from './Header';
+import Header from "./Header";
 import Benefits from "./Benefits";
 import Properties from "./Properties";
-import AddProperty from './AddProperty';
+import AddProperty from "./AddProperty";
 import Flexibility from "./Flexibility";
-import Footer from "./Footer";
 import Testimonials from "./Testimonials";
-import { useState, useEffect } from 'react';
-
+import { useState, useEffect } from "react";
 
 export default function Home() {
-
   const [properties, setProperties] = useState(null);
-  
 
   const getData = () => {
     fetch("data.json", {
@@ -27,7 +22,7 @@ export default function Home() {
       .then(function (myJson) {
         setProperties(myJson);
       })
-      .catch(error => {
+      .catch((error) => {
         console.error(error);
       });
   };
@@ -35,17 +30,19 @@ export default function Home() {
   useEffect(() => {
     getData();
   }, []);
- 
+
   return (
-    
-    <div>
+    <>
       <Header />
+      <main>
       <Benefits />
-      <Properties properties={properties}/>
-      <Flexibility properties={properties}/>
+      
+     
+      <Properties properties={properties} />
+      <Flexibility properties={properties} />
       <AddProperty />
+      </main>
       <Testimonials />
-      <Footer />
-    </div>
+    </>
   );
 }

@@ -9,7 +9,6 @@ export default function AllProperties() {
   const [properties, setProperties] = useState([]);
     async function fetchData() {
        const results = await API.get();
-       console.log(results)
        setProperties(results);
     };
 

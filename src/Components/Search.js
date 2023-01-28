@@ -33,7 +33,7 @@ export default function Search(props) {
   }, []);
 
   return (
-    <div className="bg-slate-50 h-screen">
+    <div className="bg-slate-50 ">
       <div className="grid container mx-auto md:max-w-3xl lg:max-w-5xl md:w-3/4 py-14">
         <div className="flex justify-between items-center">
           <h2 className="text-black font-bold text-lg md:text-xl lg:text-2xl">
