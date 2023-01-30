@@ -1,7 +1,18 @@
-import React from "react";
+import { useState, useRef } from "react";
 
 export default function AddProperty() {
 
+    const[files, setFiles] = useState([]);
+    const inputRef = useRef();
+    const handleDragOver = (event) => {
+        event.preventDefault();
+      };
+   const handleDrop = (event) => {
+    event.preventDefault();
+    setFiles(event.dataTransfer);
+   };
+
+   
     return (
         <div className="bg-gray-50">
 
@@ -87,13 +98,33 @@ export default function AddProperty() {
                         </div>
                 </div>
 
-                <div className="flex flex-col pt-4 p-4 bg-red-50 justify-items-center border border-dashed border-red-500">
+                <div className="flex flex-col pt-4 p-4 bg-red-50 justify-items-center border border-dashed border-red-500"
+                  onDragOver={handleDragOver}
+                  onDrop={handleDrop}>
                         <div className="grid justify-center">
-                         <small>Drag your images here, or <span className="text-red-500">browse</span></small>
+                         <small>Drag your images here, or 
+                            <input 
+                            type="file"
+                             multiple
+                             onChange={(event) => setFiles(event.target.files)}
+                             hidden
+                             accept="image/png, image/jpeg, image/jpg"
+                             ref={inputRef}
+                             />
+                              <button className="text-red-500 pl-1"
+                              onClick={(event) => {
+                                event.preventDefault();
+                                inputRef.current.click();
+                              }}> browse</button>
+                             </small>
                          <small className="text-gray-300 text-center">Supported:  JPG, JPEG, PNG</small>
                         </div>
                 </div>
-
+            {files && Array.from(files).map((file, id) => 
+        <div key={id}>
+        <img src={URL.createObjectURL(file)} />
+        </div>
+    )}
                 <button className="bg-red-500 text-white text-sm py-2 px-2 rounded w-4/5 mx-auto">Add New Property</button>
             </form>
         </div>  

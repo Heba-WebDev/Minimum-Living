@@ -1,4 +1,3 @@
-import React from "react";
 import { Link, useLocation } from "react-router-dom";
 import { useState } from "react";
 //Icons
@@ -20,7 +19,7 @@ export default function Navbar() {
       <nav
         className={`${
           path ? "text-white bg-transparent" : "text-black bg-gray-50"
-        } relative px-2 py-3 `}
+        } relative px-2 py-3 scroll-smooth`}
       >
         {/* The container wrapping navbar */}
         <div
@@ -64,36 +63,36 @@ export default function Navbar() {
               text-center lg:text-start `}
             >
               <li className="nav-item">
-                <a
-                  href="#"
-                  className={`${path ? "lg:text-white" : "lg:text-gray-600"} "font-normal lg:font-extralight
+                <Link
+                  to="/"
+                  className={`${path ? "text-gray-600 lg:text-white" : " lg:text-gray-600"} "font-normal lg:font-extralight
                   md:hover:pb-2 md:hover:border-b-4"`}
                 >
                   Home
-                </a>
+                </Link>
+              </li>
+              <li className="nav-item">
+                <Link
+                  to="properties"
+                  className={`${path ? "text-gray-600 lg:text-white" : "lg:text-gray-600"} "font-normal lg:font-extralight
+                  md:hover:pb-2 md:hover:border-b-4"`}
+                >
+                  Properties
+                </Link>
               </li>
               <li className="nav-item">
                 <a
-                  href="#"
-                  className={`${path ? "lg:text-white" : "lg:text-gray-600"} "font-normal lg:font-extralight
+                  href="#benefits"
+                  className={`${path ? "text-gray-600 lg:text-white" : "lg:text-gray-600"} "font-normal lg:font-extralight
                   md:hover:pb-2 md:hover:border-b-4"`}
                 >
-                  Landloard
-                </a>
-              </li>
-              <li className="nav-item">
-                <a
-                  href="#"
-                  className={`${path ? "lg:text-white" : "lg:text-gray-600"} "font-normal lg:font-extralight
-                  md:hover:pb-2 md:hover:border-b-4"`}
-                >
-                  Tenants
+                  Our Offerings
                 </a>
               </li>
               <li className="nav-item">
               <a
-                  href="#"
-                  className={`${path ? "lg:text-white" : "lg:text-gray-600"} "font-normal lg:font-extralight
+                  href="#footer"
+                  className={`${path ? "text-gray-600 lg:text-white" : "lg:text-gray-600"} "font-normal lg:font-extralight
                     md:hover:pb-2 md:hover:border-b-4"`}
                 >
                   Contact Us

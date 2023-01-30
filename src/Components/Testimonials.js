@@ -1,4 +1,3 @@
-import React from "react";
 import Testimonial from "./Testimonial";
 import { useState } from "react";
 import {RxDotFilled} from 'react-icons/rx';

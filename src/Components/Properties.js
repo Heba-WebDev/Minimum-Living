@@ -1,6 +1,5 @@
 import { Link } from "react-router-dom";
 import Property from "./Property";
-import React from "react";
 export default function Properties({ properties }) {
   const imagesBaseURL = "../Assets/Properties/9318028dd5f2o";
 
@@ -33,7 +32,7 @@ export default function Properties({ properties }) {
                   type={property.type}
                   rent={property.rent}
                   bedrooms={property.bedrooms}
-                  bathrooms={property.bathroom}
+                  bathrooms={property.bathrooms}
                   size={property.size}
                 />
               );

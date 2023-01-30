@@ -1,6 +1,6 @@
 import { RiDoubleQuotesL } from "react-icons/ri";
 
-import React from "react";
+
 export default function Testimonial({name, title, photo, format}) {
   return (
     <div className="bg-red-50 px-4 py-12">

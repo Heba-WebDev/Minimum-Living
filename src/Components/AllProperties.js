@@ -31,7 +31,7 @@ export default function AllProperties() {
     
         <div className="flex justify-between items-center">
             <h2 className="text-black font-bold text-lg md:text-xl lg:text-2xl"><span className="border-b-2 border-b-red-500">List O</span>f Properties</h2>
-            <button className="bg-red-500 text-white text-[12px] md:text-base py-1 px-3 md:py-2 md:px-4 rounded">View All Property</button>
+           
         </div>
 
         <div className="grid grid-cols-18 md:grid-cols-19 gap-5 justify-between py-8">
@@ -46,7 +46,7 @@ export default function AllProperties() {
               type={property.type}
               rent={property.rent}
               bedrooms={property.bedrooms}
-              bathrooms={property.bathroom}
+              bathrooms={property.bathrooms}
               size={property.size}
               />
             
