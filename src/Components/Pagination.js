@@ -1,4 +1,3 @@
-import React from "react";
 import { useEffect, useState } from "react";
 
 
@@ -10,13 +9,18 @@ export default function Pagination({currentPage, setCurrentPage, pages}) {
     function handlePreviousBtn() {
         if(currentPage > 1) {
             setCurrentPage(prev => prev - 1);
+            setDisablePrevious(false);
+        }else {
+            setDisablePrevious(true);
         }
+        
     }
 
     function handleNextBtn(){
         if(currentPage < pages) {
             setCurrentPage(prev => prev + 1);
         }
+        handlePrevNextBtns();
     }
 
 
@@ -24,7 +28,7 @@ export default function Pagination({currentPage, setCurrentPage, pages}) {
       if(pageNumber > 1 && pageNumber < pages) {
             setDisablePrevious(false);
             setDisableNext(false);
-        }else if(pageNumber > 1 && pageNumber == pages-1) {
+        }else if(pageNumber > 1 && pageNumber >= pages) {
             setDisablePrevious(false);
             setDisableNext(true);
         }else if(currentPage == 1){
@@ -33,22 +37,21 @@ export default function Pagination({currentPage, setCurrentPage, pages}) {
         }
     }
 
-   useEffect(() => {
-    handlePrevNextBtns();
-   }, [handleNextBtn, handlePreviousBtn])
+  
 
     return (
         <>
-        <ul className="flex justifiy-center cursor-pointer bg-white w-full md:w-min lg:w-min md:mx-auto border border-gray-200 border-solid rounded-lg">
+        <ul className="flex justifiy-center cursor-pointer bg-white w-min lg:w-min
+         mx-auto border border-gray-200 border-solid rounded-lg">
                <li className={`${disablePrevious ? "bg-gray-50 text-gray-300" : "bg-white text-red-500"} border-r border-r-gray-300 p-1`}>
-                    <a onClick={handlePreviousBtn} className="px-1 lg:px-2">
+                    <a onClick={handlePreviousBtn} className="px-1 lg:px-4">
                         Previous
                     </a>
                 </li>
                 
               
             {pagesArr.map((pageNumber, index) => (
-                <li key={pageNumber} className={`${currentPage == index+1 ? "bg-red-500" : "bg-white"} flex justifiy-center border-r border-r-gray-300 px-3 p-2 w-full`}>
+                <li key={pageNumber} className={`${currentPage == index+1 ? "bg-red-500" : "bg-white"} flex justifiy-center border-r border-r-gray-300 px-6 p-1 w-full`}>
                     <a onClick={() => {
                         setCurrentPage(pageNumber)}
                        
@@ -62,7 +65,7 @@ export default function Pagination({currentPage, setCurrentPage, pages}) {
                 </li>
             ))}
             <li className={`  ${disableNext ? "bg-gray-400" : "bg-white"} p-1`}>
-                    <a onClick={handleNextBtn} className={`${disableNext ? "bg-gray-300 text-gray-500" : "bg-white text-red-500"} px-2`}>
+                    <a onClick={handleNextBtn} className={`${disableNext ? "bg-gray-300 text-gray-500" : "bg-white text-red-500"} px-2 lg:px-4`}>
                         Next
                     </a>
                 </li>

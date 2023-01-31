@@ -1,7 +1,19 @@
 import { Link } from "react-router-dom";
 import Property from "./Property";
-export default function Properties({ properties }) {
-  const imagesBaseURL = "../Assets/Properties/9318028dd5f2o";
+import { useState, useEffect } from "react";
+import { API } from "../API/Data";
+
+export default function Properties() {
+  const [properties, setProperties] = useState(null);
+
+  const fetchData = async () => {
+    const results = await API.get();
+    setProperties(results);
+  }
+
+  useEffect(() => {
+    fetchData();
+  }, []);
 
   return (
     <div className="bg-slate-50">
@@ -11,13 +23,13 @@ export default function Properties({ properties }) {
             <span className="border-b-2 border-b-red-500">List O</span>f
             Properties
           </h2>
-          <Link to="properties" /* state={properties}*/>
-            <button
+          <Link to="properties">
+            <span
               className="bg-red-500 text-white text-[12px]
             md:text-base py-1 px-3 md:py-2 md:px-4 rounded"
             >
-              View All Property
-            </button>
+              View All Properties
+            </span>
           </Link>
         </div>
 

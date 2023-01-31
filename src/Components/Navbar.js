@@ -1,13 +1,10 @@
 import { Link, useLocation } from "react-router-dom";
 import { useState } from "react";
-//Icons
 import logo1 from "../Assets/Images/logo 1.png";
 import { GiHamburgerMenu } from "react-icons/gi";
 import { BsFillHouseFill } from "react-icons/bs";
 
-
 export default function Navbar() {
-  //States
   const [navbarOpen, setNavbarOpen] = useState(false);
   const location = useLocation();
   const path = location.pathname === "/";
@@ -15,7 +12,7 @@ export default function Navbar() {
   return (
     <>
       {/* The design of the landing page consists of the navbar and hero section having a jointly
-       background image therefore the navbar changes depending on the current path / or another) */}
+       background image therefore the navbar changes depending on the current path => '/' or another) */}
       <nav
         className={`${
           path ? "text-white bg-transparent" : "text-black bg-gray-50"
@@ -65,8 +62,10 @@ export default function Navbar() {
               <li className="nav-item">
                 <Link
                   to="/"
-                  className={`${path ? "text-gray-600 lg:text-white" : " lg:text-gray-600"} "font-normal lg:font-extralight
-                  md:hover:pb-2 md:hover:border-b-4"`}
+                  className={`${
+                    path ? "text-gray-600 lg:text-white md:hover:pb-2 md:hover:border-b-4" : " lg:text-gray-600 md:hover:pb-2 md:hover:border-b-4 md:hover:border-b-black"
+                  } "font-normal lg:font-extralight
+                  "`}
                 >
                   Home
                 </Link>
@@ -74,8 +73,10 @@ export default function Navbar() {
               <li className="nav-item">
                 <Link
                   to="properties"
-                  className={`${path ? "text-gray-600 lg:text-white" : "lg:text-gray-600"} "font-normal lg:font-extralight
-                  md:hover:pb-2 md:hover:border-b-4"`}
+                  className={`${
+                    path ? "text-gray-600 lg:text-white md:hover:pb-2 md:hover:border-b-4" : "lg:text-gray-600 md:hover:pb-2 md:hover:border-b-4 md:hover:border-b-black"
+                  } "font-normal lg:font-extralight
+                  "`}
                 >
                   Properties
                 </Link>
@@ -83,17 +84,21 @@ export default function Navbar() {
               <li className="nav-item">
                 <a
                   href="#benefits"
-                  className={`${path ? "text-gray-600 lg:text-white" : "lg:text-gray-600"} "font-normal lg:font-extralight
-                  md:hover:pb-2 md:hover:border-b-4"`}
+                  className={`${
+                    path ? "text-gray-600 lg:text-white md:hover:pb-2 md:hover:border-b-4" : "lg:text-gray-600 md:hover:pb-2 md:hover:border-b-4 md:hover:border-b-black"
+                  } "font-normal lg:font-extralight
+                 "`}
                 >
                   Our Offerings
                 </a>
               </li>
               <li className="nav-item">
-              <a
+                <a
                   href="#footer"
-                  className={`${path ? "text-gray-600 lg:text-white" : "lg:text-gray-600"} "font-normal lg:font-extralight
-                    md:hover:pb-2 md:hover:border-b-4"`}
+                  className={`${
+                    path ? "text-gray-600 lg:text-white md:hover:pb-2 md:hover:border-b-4" : "lg:text-gray-600 md:hover:pb-2 md:hover:border-b-4 md:hover:border-b-black"
+                  } "font-normal lg:font-extralight
+                    "`}
                 >
                   Contact Us
                 </a>
