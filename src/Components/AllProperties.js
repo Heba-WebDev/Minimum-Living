@@ -4,6 +4,7 @@ import Pagination from "./Pagination";
 import { useEffect, useState } from "react";
 export default function AllProperties() {
   const [properties, setProperties] = useState([]);
+  
   async function fetchData() {
     const results = await API.get();
     setProperties(results);

@@ -32,8 +32,8 @@ export default function AddProperty() {
 
   const handleDrop = (event) => {
     event.preventDefault();
-    console.log(event.dataTransfer.toStringfy());
-    setFiles(event.dataTransfer);
+    const uploadedFiles = [...event.dataTransfer]
+    setFiles(prev => [...prev, uploadedFiles]);
   };
 
   const handleDeleteImage = (id, event) => {
@@ -51,7 +51,7 @@ export default function AddProperty() {
   };
 
   return (
-    <articale className="bg-gray-50">
+    <div className="bg-gray-50">
       <div className="container mx-auto max-w-3xl md:w-3/4 py-12 grid">
         <div className="bg-white py-5 px-3 rounded-xl drop-shadow-2xl">
           <h4 className="text-red-500 font-bold text-center py-3">
@@ -213,7 +213,8 @@ export default function AddProperty() {
                     type="file"
                     multiple
                     onChange={(event) => {
-                      setFiles(event.target.files);
+                      const uploadedFiles = [...event.target.files];
+                      setFiles(prev => [...prev, uploadedFiles]);
                     }}
                     hidden
                     accept="image/png, image/jpeg, image/jpg"
@@ -236,12 +237,21 @@ export default function AddProperty() {
               </div>
             </div>
             {files &&
-              Array.from(files).map((file, id) => (
+             files.map((file, id) => (
+            
                 <div key={id}>
                   <div className="flex justify-between items-center bg-red-50 p-2">
-                    <div className="flex gap-2 items-center">
-                      <img src={URL.createObjectURL(file)} className="w-8" />
-                      <p className="text-xs text-gray-400">{file.name}</p>
+                    <div className="grid gap-2 items-center">
+                      
+                      {file.map(item => { return(
+                        <div className="flex gap-2 items-center">
+                      
+                       <img src={URL.createObjectURL(item)} alt="" className="w-8" /> 
+                      <p className="text-xs text-gray-400">{item.name}</p>  
+                      
+                        </div>
+                      )})}
+                       
                     </div>
                     <div>
                       <button
@@ -262,6 +272,6 @@ export default function AddProperty() {
           </form>
         </div>
       </div>
-    </articale>
+    </div>
   );
 }

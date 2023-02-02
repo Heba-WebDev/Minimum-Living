@@ -16,11 +16,9 @@ function App() {
 
         <Route path="/search" element={<Search />} />
         <Route path="/properties" element={<AllProperties />} />
-        
-        <Route path='*' element={<Error />}/>
+
+        <Route path="*" element={<Error />} />
       </Route>
-     
-      
     </Routes>
   );
 }
