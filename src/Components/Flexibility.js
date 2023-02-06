@@ -54,7 +54,7 @@ export default function Flexibility() {
           </div>
         </div>
       </div>
-      <div className="grid pt-6 md:pt-0  lg:flex lg:flex-col lg:gap-3 justify-center items-center">
+      <div className="grid pt-6 lg:pt-0  lg:flex lg:flex-col lg:gap-3 justify-center items-center">
         <h2
           className="text-black font-bold text-2xl pb-2 text-center md:text-left
             "
@@ -70,10 +70,10 @@ export default function Flexibility() {
           roommate finder option. We provide you the flexibility that you most
           desire.
         </p>
-        <Link to="properties" className="w-1/2 mx-auto max-w-[158px]">
+        <Link to="properties" className="w-1/2 mx-auto max-w-[158px] mt-2">
           <span
             className="bg-red-500 text-white py-2 px-4 rounded-lg
-             text-sm "
+             text-sm"
           >
             Search Property
           </span>

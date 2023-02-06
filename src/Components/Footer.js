@@ -27,23 +27,23 @@ export default function Footer() {
             <div className='grid py-2 break-word'>
              <div className='flex gap-1 mx-auto'>
                 <HiLocationMarker className='text-red-500'/>
-                <small>345 Faulconer Drive, Suite 4 • Charlottesville, CA, 12345</small>
+                <small>Sheikh Khalifa Bin Saeed Street, Dubai, 12345</small>
              </div>
             </div>
              
-            <div className='flex gap-1 justify-center lg:justify-between  gap-9 py-4 px-1'>
+            <div className='flex gap-1 justify-center gap-9 py-4 px-1'>
             <div className='flex gap-1'>
               <BsTelephoneFill className='text-red-500'/>
-                <small>(123)456-7890</small>
+                <small>(971)26131415</small>
               </div>
               <div className='flex gap-1'>
               <AiFillPrinter className='text-red-500'/>
-                <small>(123)456-7890</small>
+                <small>(971)26262867</small>
               </div>
              </div>
             </div>
             
-            <div className='flex justify-around text-red-500 text-xl py-8'>
+            <div className='flex justify-center gap-5 text-red-500 text-xl py-8'>
             <AiFillFacebook />
              <IoLogoTwitter />
              <FaLinkedinIn />

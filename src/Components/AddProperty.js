@@ -1,6 +1,6 @@
-import { useState, useRef } from "react";
+import { useState, useRef, useEffect } from "react";
+import UploadPreview from "./UploadPreview";
 import { AiFillDelete } from "react-icons/ai";
-
 export default function AddProperty() {
   const [readyToAdd, setReadyToAdd] = useState(false);
   const [files, setFiles] = useState([]);
@@ -17,6 +17,15 @@ export default function AddProperty() {
     description: "",
   });
 
+  const [disable, setDisable] = useState(false);
+//varabiale to use as condication for enabling or disabling the add property button 
+  const formDataStrs = !newProperty.address || !newProperty.name || !newProperty.type || !newProperty.city;
+  const formDataNums = !newProperty.price || !newProperty.unit;
+
+  useEffect(() => {
+   setDisable(formDataNums || formDataStrs || files.length === 0)
+  },[newProperty, files])
+
   const handleAddNewPropertyForm = (event) => {
     setNewProperty((prevState) => {
       return {
@@ -32,27 +41,35 @@ export default function AddProperty() {
 
   const handleDrop = (event) => {
     event.preventDefault();
-    const uploadedFiles = [...event.dataTransfer]
-    setFiles(prev => [...prev, uploadedFiles]);
+    const uploadedFiles = [...event.dataTransfer];
+    setFiles((prev) => [...prev, ...uploadedFiles]);
   };
 
   const handleDeleteImage = (id, event) => {
     event.preventDefault();
+    const filteredFiles = files.filter((file, index) => index !== id);
+    setFiles(filteredFiles)
   };
 
-  const handleAddingNewProperty = () => {
-    let allFieldesFilled = null;
+  // const handleAddingNewProperty = () => {
+  //   let allFieldesFilled = null;
 
-    for (let item in newProperty) {
-      if (newProperty[item] === "" || newProperty[item] === 0)
-        allFieldesFilled = false;
-    }
-    setReadyToAdd(allFieldesFilled && files ? true : false);
-  };
+  //   for (let item in newProperty) {
+  //     if (newProperty[item] === "" || newProperty[item] === 0)
+  //       allFieldesFilled = false;
+  //   }
+  //   setReadyToAdd(allFieldesFilled && files ? true : false);
+  // };
+ 
+  function handleAddProperty() {
+    console.log('added')
+  }
 
   return (
     <div className="bg-gray-50">
       <div className="container mx-auto max-w-3xl md:w-3/4 py-12 grid">
+        
+        
         <div className="bg-white py-5 px-3 rounded-xl drop-shadow-2xl">
           <h4 className="text-red-500 font-bold text-center py-3">
             Add A New Property
@@ -60,6 +77,7 @@ export default function AddProperty() {
 
           <form className="grid gap-4">
             <div className="grid md:grid-cols-3 gap-3 pt-4">
+           
               <div className="flex flex-col gap-1">
                 <label>
                   Name <span className="text-red-500">*</span>
@@ -74,6 +92,8 @@ export default function AddProperty() {
                         border border-solid border-gray-200 placeholder:text-xs placeholder:p-2"
                 />
               </div>
+
+
               <div className="flex flex-col gap-1">
                 <label>
                   Address <span className="text-red-500">*</span>
@@ -88,6 +108,8 @@ export default function AddProperty() {
                         border border-solid border-gray-200 placeholder:text-xs placeholder:p-2"
                 />
               </div>
+
+
               <div className="flex flex-col gap-1">
                 <label>
                   Unit Number <span className="text-red-500">*</span>
@@ -102,6 +124,7 @@ export default function AddProperty() {
                         border border-solid border-gray-200 placeholder:text-xs placeholder:p-2"
                 />
               </div>
+
             </div>
 
             <div className="grid md:grid-cols-3 gap-2 pt-1">
@@ -214,7 +237,7 @@ export default function AddProperty() {
                     multiple
                     onChange={(event) => {
                       const uploadedFiles = [...event.target.files];
-                      setFiles(prev => [...prev, uploadedFiles]);
+                      setFiles((prev) => [...prev, ...uploadedFiles]);
                     }}
                     hidden
                     accept="image/png, image/jpeg, image/jpg"
@@ -236,37 +259,17 @@ export default function AddProperty() {
                 </small>
               </div>
             </div>
-            {files &&
-             files.map((file, id) => (
             
-                <div key={id}>
-                  <div className="flex justify-between items-center bg-red-50 p-2">
-                    <div className="grid gap-2 items-center">
-                      
-                      {file.map(item => { return(
-                        <div className="flex gap-2 items-center">
-                      
-                       <img src={URL.createObjectURL(item)} alt="" className="w-8" /> 
-                      <p className="text-xs text-gray-400">{item.name}</p>  
-                      
-                        </div>
-                      )})}
-                       
-                    </div>
-                    <div>
-                      <button
-                        className="flex items-center"
-                        onClick={(event) => {
-                          handleDeleteImage(id, event);
-                        }}
-                      >
-                        <AiFillDelete className="text-red-500" size="19" />
-                      </button>
-                    </div>
-                  </div>
-                </div>
+            {files &&
+             files.map((file, index) => (
+        
+            <UploadPreview key={index} file={file} id={index} handleDeleteImage={handleDeleteImage} />
+                
               ))}
-            <button className="bg-red-500 text-white text-sm py-2 px-2 rounded w-4/5 mx-auto">
+
+
+            <button className={disable ? "bg-red-100 text-white text-sm py-2 px-2 rounded w-4/5 mx-auto" : "bg-red-500 text-white text-sm py-2 px-2 rounded w-4/5 mx-auto"}
+            disabled={disable} onClick={handleAddProperty}>
               Add New Property
             </button>
           </form>

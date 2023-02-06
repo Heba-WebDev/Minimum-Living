@@ -35,8 +35,11 @@ export default function Properties() {
 
         <div className="grid grid-cols-18 md:grid-cols-19 gap-5 justify-between py-8">
           {properties &&
+          
             properties.slice(0, 6).map((property) => {
+              
               return (
+                
                 <Property
                   key={property.id}
                   photo={`./Properties/${property.image}.webp`}
@@ -46,6 +49,7 @@ export default function Properties() {
                   bedrooms={property.bedrooms}
                   bathrooms={property.bathrooms}
                   size={property.size}
+                  city={property.city}
                 />
               );
             })}

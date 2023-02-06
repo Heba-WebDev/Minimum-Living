@@ -1,4 +1,4 @@
-const BASE_API_URL = "data.json";
+const BASE_API_URL = "/data.json";
 export const API = {
   get: async () => {
   

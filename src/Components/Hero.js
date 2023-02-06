@@ -47,7 +47,7 @@ export default function Hero() {
           className="text-white text-center md:text-left 
         text-4xl lg:text-5xl antialiased font-bold"
         >
-          The most affortable place to stay in the san franciso bay area.
+          Find the most affortable place to stay in UAE.
         </h1>
       </div>
 

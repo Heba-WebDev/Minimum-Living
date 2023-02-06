@@ -10,12 +10,14 @@ export default function Property({
   bedrooms,
   bathrooms,
   size,
+  city
 }) {
+
   return (
     <div className="bg-white rounded-xl grid border border-gray-100 border-solid">
       <img src={photo} alt="" className="rounded-t-xl" />
       <h3 className="py-2 px-2 text-sm md:text-lg">{title}</h3>
-      <small className="px-2 text-gray-400 text-xs font-thin">{type}</small>
+      <small className="px-2 text-gray-400 text-xs font-thin">{type} - {city}</small>
       <h4 className="px-2 pb-2 text-red-500 font-bold">${rent}/Month</h4>
       <div className="grid grid-cols-3 border-t border-gray-100">
         <div className="flex justify-center gap-1 py-3 border-r border-gray-100">

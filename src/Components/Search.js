@@ -2,6 +2,7 @@ import { useLocation } from "react-router-dom";
 import { useEffect, useState } from "react";
 import { API } from "../API/Data";
 import Property from "./Property";
+import { Link } from "react-router-dom";
 
 export default function Search(props) {
   const location = useLocation();
@@ -10,16 +11,17 @@ export default function Search(props) {
 
   const [proeprties, setProperties] = useState(null);
 
-  async function fetchData() {
-    const results = await API.get();
-    let filteredResult = results.filter((property) => property.type === type);
-
-    setProperties(type ? filteredResult : results);
-  }
+  
 
   useEffect(() => {
+    const fetchData = async () => {
+      const results = await API.get();
+      let filteredResult = results.filter((property) => property.type === type && property.city === city);
+      setProperties(type ? filteredResult : results);
+    }
+
     fetchData();
-  }, []);
+  },[city, type]);
 
   return (
     <div className="bg-slate-50 ">
@@ -29,6 +31,14 @@ export default function Search(props) {
             <span className="border-b-2 border-b-red-500">List O</span>f
             Properties
           </h2>
+          <Link to="/properties">
+            <span
+              className="bg-red-500 text-white text-[12px]
+            md:text-base py-1 px-3 md:py-2 md:px-4 rounded"
+            >
+              View All Properties
+            </span>
+          </Link>
         </div>
 
         <div className="grid grid-cols-18 md:grid-cols-19 gap-5 justify-between py-8">
@@ -44,6 +54,7 @@ export default function Search(props) {
                   bedrooms={property.bedrooms}
                   bathrooms={property.bathroom}
                   size={property.size}
+                  city={property.city}
                 />
               );
             })}

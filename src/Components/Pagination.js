@@ -59,7 +59,7 @@ export default function Pagination({currentPage, setCurrentPage, pages}) {
                         
                        
                     } className={`${currentPage === index+1 ? "text-white mx-auto" 
-                    : " text-red-500 mx-auto"} w-full text-center w-full px-6 p-1`}>
+                    : " text-red-500 mx-auto"} w-full text-center w-full px-3 lg:px-6 p-1`}>
                        {pageNumber}
                     </button>
                 </li>

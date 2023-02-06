@@ -5,14 +5,17 @@ import { useEffect, useState } from "react";
 export default function AllProperties() {
   const [properties, setProperties] = useState([]);
   
-  async function fetchData() {
+  const fetchData = async () => {
     const results = await API.get();
     setProperties(results);
-  }
+  };
+
 
   useEffect(() => {
     fetchData();
   }, []);
+
+ 
 
   const [currentPage, setCurrentPage] = useState(1);
   const [showPerPage] = useState(6);
@@ -32,21 +35,23 @@ export default function AllProperties() {
             <span className="border-b-2 border-b-red-500">List O</span>f
             Properties
           </h1>
+        
         </div>
 
-        <div className="grid grid-cols-18 md:grid-cols-19 gap-5 justify-between py-8">
-          {properties &&
+        <div className="grid grid-cols-18 md:grid-cols-19 gap-3 md:ga-5 justify-between py-8">
+          {properties && currentShownProperties &&
             currentShownProperties.map((property) => {
               return (
                 <Property
                   key={property.id}
-                  photo={`./Properties/${property.image}.webp`}
+                  photo={`../Properties/${property.image}.webp`}
                   title={property.location}
                   type={property.type}
                   rent={property.rent}
                   bedrooms={property.bedrooms}
                   bathrooms={property.bathrooms}
                   size={property.size}
+                  city={property.city}
                 />
               );
             })}

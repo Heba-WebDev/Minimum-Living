@@ -13,8 +13,8 @@
   {
      "id": 1,
     "type": "Apartment",
-    "location": "Abu Dhabi, Al Reem Island, Shams Abu Dhabi",
-    "city": "Abu Dhabi",
+    "location": "Qaryat Al Hidd, Saadiyat Island",
+    "city": "Sharjah",
     "bedrooms": "1",
     "bathrooms": "1",
     "size": "160",
@@ -24,7 +24,7 @@
   {
      "id": 2,
     "type": "Villa",
-    "location": "Abu Dhabi, Al Reem Island, Shams Abu Dhabi",
+    "location": "Tower 1, Al Reef, Al Reef Downtown",
     "city": "Abu Dhabi",
     "bedrooms": "4",
     "bathrooms": "3",
@@ -35,8 +35,8 @@
   {
      "id": 3,
     "type": "Villa",
-    "location": "Abu Dhabi, Al Reem Island, Shams Abu Dhabi",
-    "city": "Abu Dhabi",
+    "location": "Al Maqtaa village",
+    "city": "Sharjah",
     "bedrooms": "5",
     "bathrooms": "4",
     "size": "291",
@@ -46,7 +46,7 @@
   {
      "id": 4,
     "type": "Apartment",
-    "location": "Abu Dhabi, Al Reem Island, Shams Abu Dhabi",
+    "location": "Marina Blue Tower",
     "city": "Abu Dhabi",
     "bedrooms": "2",
     "bathrooms": "1",
@@ -57,7 +57,7 @@
   {
      "id": 5,
     "type": "Apartment",
-    "location": "Abu Dhabi, Al Reem Island, Shams Abu Dhabi",
+    "location": "Al Reem Island, Shams",
     "city": "Abu Dhabi",
     "bedrooms": "2",
     "bathrooms": "2",
@@ -68,7 +68,7 @@
   {
      "id": 6,
     "type": "Penthouse",
-    "location": "Abu Dhabi, Al Reem Island, Shams Abu Dhabi",
+    "location": "Etihad Tower 5",
     "city": "Abu Dhabi",
     "bedrooms": "4",
     "bathrooms": "4",
@@ -79,8 +79,8 @@
   {
      "id": 7,
     "type": "Penthouse",
-    "location": "Abu Dhabi, Al Reem Island, Shams Abu Dhabi",
-    "city": "Abu Dhabi",
+    "location": "Khalifa City, Khalifa City A",
+    "city": "Sharjah",
     "bedrooms": "3",
     "bathrooms": "2",
     "size": "485",
@@ -90,7 +90,7 @@
   {
      "id": 8,
     "type": "Apartment",
-    "location": "Abu Dhabi, Al Reem Island, Shams Abu Dhabi",
+    "location": "Saadiyat Island, The Pearl Residences at Saadiyat",
     "city": "Abu Dhabi",
     "bedrooms": "2",
     "bathrooms": "1",
@@ -101,7 +101,7 @@
   {
      "id": 9,
     "type": "Apartment",
-    "location": "Abu Dhabi, Al Reem Island, Shams Abu Dhabi",
+    "location": "Saadiyat Island, The Pearl Residences at Saadiyat",
     "city": "Abu Dhabi",
     "bedrooms": "1",
     "bathrooms": "1",
@@ -112,7 +112,7 @@
   {
      "id": 10,
     "type": "Apartment",
-    "location": "Abu Dhabi, Al Reem Island, Shams Abu Dhabi",
+    "location": "Waters Edge",
     "city": "Abu Dhabi",
     "bedrooms": "2",
     "bathrooms": "2",
@@ -123,7 +123,7 @@
   {
      "id": 11,
     "type": "Duplex",
-    "location": "Abu Dhabi, Al Reem Island, Shams Abu Dhabi",
+    "location": "Al Murjan Tower",
     "city": "Abu Dhabi",
     "bedrooms": "3",
     "bathrooms": "3",
@@ -134,7 +134,7 @@
   {
      "id": 12,
     "type": "Duplex",
-    "location": "Abu Dhabi, Al Reem Island, Shams Abu Dhabi",
+    "location": "Al Murjan Tower",
     "city": "Abu Dhabi",
     "bedrooms": "3",
     "bathrooms": "3",
@@ -145,8 +145,8 @@
   {
      "id": 13,
     "type": "Apartment",
-    "location": "Abu Dhabi, Al Reem Island, Shams Abu Dhabi",
-    "city": "Abu Dhabi",
+    "location": "Waters Edge, Yas Island",
+    "city": "Dubai",
     "bedrooms": "3",
     "bathrooms": "2",
     "size": "91",
@@ -156,8 +156,8 @@
   {
      "id": 14,
     "type": "Apartment",
-    "location": "Abu Dhabi, Al Reem Island, Shams Abu Dhabi",
-    "city": "Abu Dhabi",
+    "location": "Tower 1, Al Ryad",
+    "city": "Dubai",
     "bedrooms": "2",
     "bathrooms": "1",
     "size": "51",
@@ -167,12 +167,56 @@
   {
     "id": 15,
     "type": "Villa",
-    "location": "Abu Dhabi, Al Reem Island, Shams Abu Dhabi",
+    "location": "Luluat Al Raha, Al Raha Beach",
     "city": "Abu Dhabi",
     "bedrooms": "4",
     "bathrooms": "4",
     "size": "520",
     "rent": 30000,
     "image": "5601850095bf9f2849488"
+  },
+  {
+    "id": 16,
+    "type": "Penthouse",
+    "location": "Marina beach",
+    "city": "Dubai",
+    "bedrooms": "3",
+    "bathrooms": "4",
+    "size": "400",
+    "rent": 30000,
+    "image": "1571460"
+  },
+  {
+    "id": 17,
+    "type": "Villa",
+    "location": "Meadows 9",
+    "city": "Dubai",
+    "bedrooms": "5",
+    "bathrooms": "5",
+    "size": "620",
+    "rent": 130000,
+    "image": "258154"
+  },
+  {
+    "id": 18,
+    "type": "Apartment",
+    "location": "Golden mile 8, Palm Jumeirah",
+    "city": "Dubai",
+    "bedrooms": "3",
+    "bathrooms": "3",
+    "size": "290",
+    "rent": 23000,
+    "image": "1571472"
+  },
+  {
+    "id": 19,
+    "type": "Apartment",
+    "location": "Golden mile 8, Palm Jumeirah",
+    "city": "Sharjah",
+    "bedrooms": "2",
+    "bathrooms": "2",
+    "size": "250",
+    "rent": 18000,
+    "image": "2506986"
   }
 ]
