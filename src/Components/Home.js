@@ -4,7 +4,7 @@ import Properties from "./Properties";
 import AddProperty from "./AddProperty";
 import Flexibility from "./Flexibility";
 import Testimonials from "./Testimonials";
-
+import { LayoutGroup } from "framer-motion"
 
 export default function Home() {
   

@@ -1,8 +1,8 @@
 import { useState, useRef, useEffect } from "react";
 import UploadPreview from "./UploadPreview";
-import { AiFillDelete } from "react-icons/ai";
+import ThankYou from './ThankYou';
+
 export default function AddProperty() {
-  const [readyToAdd, setReadyToAdd] = useState(false);
   const [files, setFiles] = useState([]);
   const inputRef = useRef();
 
@@ -17,14 +17,17 @@ export default function AddProperty() {
     description: "",
   });
 
+
   const [disable, setDisable] = useState(false);
+  const [add, setAdd] = useState(false);
+  
 //varabiale to use as condication for enabling or disabling the add property button 
   const formDataStrs = !newProperty.address || !newProperty.name || !newProperty.type || !newProperty.city;
   const formDataNums = !newProperty.price || !newProperty.unit;
 
   useEffect(() => {
    setDisable(formDataNums || formDataStrs || files.length === 0)
-  },[newProperty, files])
+  },[newProperty, files, add, formDataNums, formDataStrs])
 
   const handleAddNewPropertyForm = (event) => {
     setNewProperty((prevState) => {
@@ -48,29 +51,36 @@ export default function AddProperty() {
   const handleDeleteImage = (id, event) => {
     event.preventDefault();
     const filteredFiles = files.filter((file, index) => index !== id);
-    setFiles(filteredFiles)
+    setFiles(filteredFiles);
   };
 
-  // const handleAddingNewProperty = () => {
-  //   let allFieldesFilled = null;
 
-  //   for (let item in newProperty) {
-  //     if (newProperty[item] === "" || newProperty[item] === 0)
-  //       allFieldesFilled = false;
-  //   }
-  //   setReadyToAdd(allFieldesFilled && files ? true : false);
-  // };
  
-  function handleAddProperty() {
-    console.log('added')
+  function handleAddProperty(event) {
+   event.preventDefault();
+    if(!disable) {
+      setAdd(true);
+      setFiles([]);
+      setNewProperty({
+        name: "",
+        address: "",
+        unit: 0,
+        type: "",
+        city: "",
+        state: "",
+        price: 0,
+        description: "",
+      });
+    } else {
+      setAdd(false);
+    }
   }
 
   return (
     <div className="bg-gray-50">
       <div className="container mx-auto max-w-3xl md:w-3/4 py-12 grid">
         
-        
-        <div className="bg-white py-5 px-3 rounded-xl drop-shadow-2xl">
+        {!add ? <div className="bg-white py-5 px-3 rounded-xl drop-shadow-2xl">
           <h4 className="text-red-500 font-bold text-center py-3">
             Add A New Property
           </h4>
@@ -269,11 +279,17 @@ export default function AddProperty() {
 
 
             <button className={disable ? "bg-red-100 text-white text-sm py-2 px-2 rounded w-4/5 mx-auto" : "bg-red-500 text-white text-sm py-2 px-2 rounded w-4/5 mx-auto"}
-            disabled={disable} onClick={handleAddProperty}>
+            disabled={disable} onClick={(event) => handleAddProperty(event)}>
               Add New Property
             </button>
           </form>
         </div>
+        
+        :
+        <ThankYou setAdd={setAdd}/>
+        }  
+        
+        
       </div>
     </div>
   );

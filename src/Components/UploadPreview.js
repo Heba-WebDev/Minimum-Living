@@ -1,8 +1,11 @@
 import { AiFillDelete } from "react-icons/ai";
-
+import { motion } from "framer-motion";
 export default function UploadPreview({ file, id, handleDeleteImage, key }) {
   return (
-    <div key={key}>
+    <motion.div key={key}
+    initial={{ x: 300, opacity: 0 }}
+    animate={{ x: 0, opacity: 1 }}
+    exit={{ x: -300, opacity: 0 }}>
       <div className="flex justify-between items-center bg-red-50 p-2">
         <div className="grid gap-2 items-center">
           <div className="flex gap-2 items-center">
@@ -21,6 +24,6 @@ export default function UploadPreview({ file, id, handleDeleteImage, key }) {
           </button>
         </div>
       </div>
-    </div>
+    </motion.div>
   );
 }

@@ -2,7 +2,13 @@ import Property from "./Property";
 import { API } from "../API/Data";
 import Pagination from "./Pagination";
 import { useEffect, useState } from "react";
+import { animate, motion } from "framer-motion";
 export default function AllProperties() {
+  const animation = {
+    initial: {opacity: 0, x:100},
+    animate: {opacity: 1, x:0},
+    exit: {opacity:0, x:-100}
+  };
   const [properties, setProperties] = useState([]);
   
   const fetchData = async () => {
@@ -28,7 +34,7 @@ export default function AllProperties() {
   const pages = Math.ceil(properties.length / showPerPage);
 
   return (
-    <div className="bg-slate-50 grid">
+    <motion.div variants={animation} className="bg-slate-50 grid">
       <div className="grid container mx-auto md:max-w-3xl lg:max-w-5xl md:w-3/4 py-14">
         <div className="flex justify-between items-center">
           <h1 className="text-black font-bold text-lg md:text-xl lg:text-2xl">
@@ -68,6 +74,6 @@ export default function AllProperties() {
           />
         </div>
       </div>
-    </div>
+    </motion.div>
   );
 }
