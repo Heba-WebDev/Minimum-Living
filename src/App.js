@@ -3,11 +3,11 @@ import { Route, Routes } from "react-router-dom";
 
 
 //Components
-import Home from "./Components/Home";
-import Search from "./Components/Search";
+import Home from "./Pages/Home";
+import Search from "./Pages/Search";
 import SharedLayout from "./Components/SharedLayout";
-import AllProperties from "./Components/AllProperties";
-import Error from "./Components/Error";
+import AllProperties from "./Pages/AllProperties";
+import Error from './Pages/Error';
 function App() {
   return (
     

@@ -1,7 +1,8 @@
 import { Link } from "react-router-dom";
-import Property from "./Property";
+import Property from "../Components/Property";
 import { useState, useEffect } from "react";
 import { API } from "../API/Data";
+import { motion } from "framer-motion";
 
 export default function Properties() {
   const [properties, setProperties] = useState(null);
@@ -16,7 +17,12 @@ export default function Properties() {
   }, []);
 
   return (
-    <div className="bg-slate-50">
+    <motion.div 
+    className="bg-slate-50"
+    initial={{opacity: 0}}
+    animate={{opacity: 1}}
+    exit={{opacity: 0}}
+    >
       <div className="grid container mx-auto md:max-w-3xl lg:max-w-5xl md:w-3/4 py-14">
         <div className="flex justify-between items-center">
           <h2 className="text-black font-bold text-lg md:text-xl lg:text-2xl">
@@ -55,6 +61,6 @@ export default function Properties() {
             })}
         </div>
       </div>
-    </div>
+    </motion.div>
   );
 }

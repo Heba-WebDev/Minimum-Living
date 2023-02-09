@@ -1,6 +1,7 @@
 import { BiBed } from "react-icons/bi";
 import { FaBath } from "react-icons/fa";
 import { CgHashtag } from "react-icons/cg";
+import { motion } from "framer-motion";
 
 export default function Property({
   photo,
@@ -14,7 +15,12 @@ export default function Property({
 }) {
 
   return (
-    <div className="bg-white rounded-xl grid border border-gray-100 border-solid">
+    <motion.div 
+    className="bg-white rounded-xl grid border border-gray-100 border-solid"
+    initial={{opacity: 0}}
+    animate={{opacity: 1}}
+    exit={{opacity: 0}}
+    >
       <img src={photo} alt="" className="rounded-t-xl" />
       <h3 className="py-2 px-2 text-sm md:text-lg">{title}</h3>
       <small className="px-2 text-gray-400 text-xs font-thin">{type} - {city}</small>
@@ -33,6 +39,6 @@ export default function Property({
           <h5 className="text-xs">{size}</h5>
         </div>
       </div>
-    </div>
+    </motion.div>
   );
 }

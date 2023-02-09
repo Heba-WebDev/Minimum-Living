@@ -1,4 +1,4 @@
-import Testimonial from "./Testimonial";
+import Testimonial from "../Components/Testimonial";
 import { useState } from "react";
 import { RxDotFilled } from "react-icons/rx";
 import cover from "../Assets/Images/cover.png";

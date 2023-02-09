@@ -2,6 +2,7 @@ import Rectangle1 from "../Assets/Images/Rectangle 1.png";
 import magnifyingglass from "../Assets/Images/magnifyingglass.png";
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
+import { motion } from "framer-motion";
 
 export default function Hero() {
   const [error, SetError] = useState(false);
@@ -38,7 +39,10 @@ export default function Hero() {
   }
 
   return (
-    <article
+    <motion.article
+    initial={{opacity: 0}}
+    animate={{opacity: 1}}
+    exit={{opacity: 0}}
       className="container mx-auto md:max-w-3xl lg:max-w-5xl md:w-3/4 py-2 px-4 items-center 
          justify-between grid grid-cols-16 gap-4 py-12"
     >
@@ -108,6 +112,6 @@ export default function Hero() {
           )}
         </div>
       </div>
-    </article>
+    </motion.article>
   );
 }

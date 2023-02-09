@@ -22,7 +22,7 @@ export default function Navbar() {
   const itemVariants = {
     open: {
       opacity: 1,
-      y: 0,
+      y: 1,
       transition: { type: "spring", stiffness: 300, damping: 35 }
     },
     closed: { opacity: 0, y: 25, transition: { duration: 0.3 } }
@@ -31,12 +31,13 @@ export default function Navbar() {
     <>
       {/* The design of the landing page consists of the navbar and hero section having a jointly
        background image therefore the navbar changes depending on the current path => '/' or another) */}
-      <motion.nav
-       initial={false}
-       animate={navbarOpen ? "open" : "closed"}
+      <nav
+       
         className={`${
           path ? "text-white bg-transparent" : "text-black bg-gray-50"
         } relative px-2 py-3 scroll-smooth`}
+       
+        
       >
         {/* The container wrapping navbar */}
         <div
@@ -52,7 +53,7 @@ export default function Navbar() {
                 <BsFillHouseFill size="18" />
               </Link>
             )}
-            <motion.button whileTap={{ scale: 0.97 }}
+            <button 
               className="text-white cursor-pointer text-xl leading-none  py-1 
                 border border-solid border-transparent rounded block lg:hidden outline-none focus:outline-none"
               type="button"
@@ -61,7 +62,7 @@ export default function Navbar() {
               <GiHamburgerMenu
                 className={`${path ? "text-white" : "text-black"}`}
               />
-            </motion.button>
+            </button>
           </div>
 
           {/* The navbar's list */}
@@ -73,33 +74,14 @@ export default function Navbar() {
             }
             id="example-navbar-danger "
           >
-            <motion.ul
-            variants={{
-              open: {
-                clipPath: "inset(0% 0% 0% 0% round 10px)",
-                transition: {
-                  type: "spring",
-                  bounce: 0,
-                  duration: 0.7,
-                  delayChildren: 0.3,
-                  staggerChildren: 0.05
-                }
-              },
-              closed: {
-                clipPath: "inset(10% 50% 90% 50% round 10px)",
-                transition: {
-                  type: "spring",
-                  bounce: 0,
-                  duration: 0.3
-                }
-              }
-            }}
+            <ul
+ 
               className={`flex flex-col lg:flex-row gap-3 list-none lg:ml-auto bg-white lg:bg-transparent py-10 lg:p-0
               top-[90%] left-[5%] w-[90%]   lg:w-fit
                  absolute lg:relative rounded-xl left-5 lg:left-auto lg:top-auto
               text-center lg:text-start `}
             >
-              <motion.li className="nav-item" variants={itemVariants}>
+              <li className="nav-item" variants={itemVariants}>
                 <Link
                   to="/"
                   className={`${
@@ -109,8 +91,8 @@ export default function Navbar() {
                 >
                   Home
                 </Link>
-              </motion.li>
-              <motion.li className="nav-item" variants={itemVariants}>
+              </li>
+              <li className="nav-item" variants={itemVariants}>
                 <Link
                   to="properties"
                   className={`${
@@ -120,8 +102,8 @@ export default function Navbar() {
                 >
                   Properties
                 </Link>
-              </motion.li>
-              <motion.li className="nav-item" variants={itemVariants}>
+              </li>
+              <li className="nav-item" variants={itemVariants}>
                 <a
                   href="#benefits"
                   className={`${
@@ -131,8 +113,8 @@ export default function Navbar() {
                 >
                   Our Offerings
                 </a>
-              </motion.li>
-              <motion.li className="nav-item" variants={itemVariants}>
+              </li>
+              <li className="nav-item" variants={itemVariants}>
                 <a
                   href="#footer"
                   className={`${
@@ -142,11 +124,11 @@ export default function Navbar() {
                 >
                   Contact Us
                 </a>
-              </motion.li>
-            </motion.ul>
+              </li>
+            </ul>
           </div>
         </div>
-      </motion.nav>
+      </nav>
     </>
   );
 }

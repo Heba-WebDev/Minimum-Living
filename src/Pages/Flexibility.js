@@ -75,7 +75,7 @@ export default function Flexibility() {
             className="bg-red-500 text-white py-2 px-4 rounded-lg
              text-sm"
           >
-            Search Property
+            View Properties
           </span>
         </Link>
       </div>

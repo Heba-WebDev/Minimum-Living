@@ -1,6 +1,7 @@
 import { useState, useRef, useEffect } from "react";
 import UploadPreview from "./UploadPreview";
 import ThankYou from './ThankYou';
+import { motion } from "framer-motion";
 
 export default function AddProperty() {
   const [files, setFiles] = useState([]);
@@ -77,7 +78,12 @@ export default function AddProperty() {
   }
 
   return (
-    <div className="bg-gray-50">
+    <motion.div 
+    className="bg-gray-50"
+    initial={{opacity: 0}}
+    animate={{opacity: 1}}
+    exit={{opacity: 0}}
+    >
       <div className="container mx-auto max-w-3xl md:w-3/4 py-12 grid">
         
         {!add ? <div className="bg-white py-5 px-3 rounded-xl drop-shadow-2xl">
@@ -291,6 +297,6 @@ export default function AddProperty() {
         
         
       </div>
-    </div>
+    </motion.div>
   );
 }

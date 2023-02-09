@@ -1,5 +1,5 @@
-import Navbar from "./Navbar";
-import Hero from "./Hero";
+import Navbar from "../Components/Navbar";
+import Hero from "../Components/Hero";
 import React from "react";
 
 export default function Headers() {

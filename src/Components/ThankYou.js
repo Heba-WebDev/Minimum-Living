@@ -1,8 +1,14 @@
 import add from '../Assets/Images/add.webp';
+import { motion } from 'framer-motion';
 export default function ThankYou({setAdd}) {
   return (
     
-<div className="bg-gray-50 p-4">
+<motion.div 
+className="bg-gray-50 p-4"
+initial={{opacity: 0}}
+animate={{opacity: 1}}
+exit={{opacity: 0}}
+>
     <div class="max-w-sm bg-white border border-gray-200 rounded-lg mx-auto
 shadow ">
     
@@ -23,7 +29,7 @@ shadow ">
         </button>
     </div>
 </div>
-</div>
+</motion.div>
 
   );
 }
