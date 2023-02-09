@@ -1,11 +1,27 @@
+import "./App.css";
+import { Route, Routes } from "react-router-dom";
 
-import './App.css';
-import Header from './Components/Header'
+
+//Components
+import Home from "./Pages/Home";
+import Search from "./Pages/Search";
+import SharedLayout from "./Components/SharedLayout";
+import AllProperties from "./Pages/AllProperties";
+import Error from './Pages/Error';
 function App() {
   return (
-    <div className=" ">
-      <Header />
-    </div>
+    
+    <Routes>
+      <Route path="/" element={<SharedLayout />}>
+        <Route index element={<Home />} />
+
+        <Route path="/search" element={<Search />} />
+        <Route path="/properties" element={<AllProperties />} />
+        
+        <Route path="*" element={<Error />} />
+      </Route>
+    </Routes>
+ 
   );
 }
 
