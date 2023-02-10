@@ -16,6 +16,7 @@ module.exports = {
         '16': 'repeat(auto-fit, minmax(250px, 1fr));',
         '20': '1fr, 1fr, 40px',
         '18': 'repeat(auto-fit, minmax(135px, 1fr));',
+        '17': 'repeat(auto-fit, minmax(120px, 1fr));',
         '19': 'repeat(auto-fit, minmax(200px, 1fr));',
       },
     },

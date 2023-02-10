@@ -29,7 +29,7 @@ export default function Benefits() {
 
         <section
           id="benefits"
-          className="grid grid-cols-18 md:grid-cols-auto gap-y-8 gap-x-2 justify-between py-10"
+          className="grid grid-cols-17 md:grid-cols-auto gap-y-8 gap-x-2 justify-between py-10"
         >
           <div className="grid gap-1 md:gap-2 justify-self-center">
             <div className="w-14 shadow-2xl rounded-lg flex items-center justify-content-center">
