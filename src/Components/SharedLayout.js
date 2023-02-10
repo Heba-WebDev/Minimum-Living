@@ -9,7 +9,7 @@ export default function SharedLayout() {
 
   useEffect(() => {
     location.pathname === "/" ? setPath(false) : setPath(true);
-  });
+  },[location]);
 
   return (
     <>

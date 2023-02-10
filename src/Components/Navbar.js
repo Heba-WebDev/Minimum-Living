@@ -3,22 +3,12 @@ import { useState } from "react";
 import logo1 from "../Assets/Images/logo 1.png";
 import { GiHamburgerMenu } from "react-icons/gi";
 import { BsFillHouseFill } from "react-icons/bs";
-import { motion,useScroll } from "framer-motion";
+
 
 export default function Navbar() {
-  const { scrollYProgress } = useScroll();
   const [navbarOpen, setNavbarOpen] = useState(false);
   const location = useLocation();
   const path = location.pathname === "/";
-  const variants = {
-    open: {
-      opacity: 1,
-      y: 0,
-      transition: { type: "spring", stiffness: 300, damping: 24 }
-    },
-    closed: { opacity: 0, y: 20, transition: { duration: 0.2 } }
-  };
-
   const itemVariants = {
     open: {
       opacity: 1,
@@ -47,7 +37,7 @@ export default function Navbar() {
           {/* The div with the logo and hamburger menu icon */}
           <div className="w-full relative flex justify-between items-center  lg:w-auto lg:static lg:block lg:justify-start">
             {path ? (
-              <img src={logo1} className="logo" />
+              <img src={logo1} className="logo" alt="menu icon"/>
             ) : (
               <Link to="/">
                 <BsFillHouseFill size="18" />

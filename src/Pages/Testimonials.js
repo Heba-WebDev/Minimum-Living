@@ -35,7 +35,7 @@ export default function Testimonials() {
           {slider[sliderIndex]}
           <div className="flex px-4">
             {dots.map((dot, index) =>
-              index == sliderIndex ? (
+              index === sliderIndex ? (
                 <div
                   key={index}
                   className="text-red-500"

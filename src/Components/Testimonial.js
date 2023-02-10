@@ -21,6 +21,7 @@ export default function Testimonial({ name, title, photo, format }) {
         <img
           src={photo}
           className="rounded-full w-14 border-2 border-red-500 border-solid"
+          alt={name}
         />
         <div className="grid">
           <small className="text-red-500 font-bold">{name}</small>

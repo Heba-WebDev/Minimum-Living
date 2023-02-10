@@ -59,15 +59,15 @@ export default function Footer() {
           <div className='items-center justify-between'>
           <ul className='text-xs flex flex-col lg:flex-row justify-center mx-auto 
           md:text-left gap-4 lg:gap-2  justify-between py-8 text-gray-500'>
-          <li className='uppercase flex justify-center'><a href="#">
-          About</a></li>
-            <li className='uppercase flex justify-center'><a href="#">
-            Contact us</a></li>
-            <li className='uppercase flex justify-center'><a href="#">
-            help</a></li>
-            <li className='uppercase flex justify-center'>privacy policy</li>
-            <li className='uppercase flex justify-center '><a href="#">
-            disclaimer</a></li>
+          <li className='uppercase flex justify-center hover:cursor-pointer'>
+          About</li>
+            <li className='uppercase flex justify-center hover:cursor-pointer'>
+            Contact us</li>
+            <li className='uppercase flex justify-center hover:cursor-pointer'>
+            help</li>
+            <li className='uppercase flex justify-center hover:cursor-pointer'>privacy policy</li>
+            <li className='uppercase flex justify-center hover:cursor-pointer'>
+            disclaimer</li>
 
             </ul>
 

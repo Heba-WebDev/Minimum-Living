@@ -2,7 +2,7 @@ import Property from "../Components/Property";
 import { API } from "../API/Data";
 import Pagination from "../Components/Pagination";
 import { useEffect, useState } from "react";
-import { animate, motion } from "framer-motion";
+import { motion } from "framer-motion";
 export default function AllProperties() {
 
   const [properties, setProperties] = useState([]);
