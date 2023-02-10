@@ -1,6 +1,6 @@
 # Minimum Living Cost
 
-An application to show rental real estates in UAE [LIVE DEMO](http://Heba-webdev.github.io/Living-Minimum).
+An application to show rental real estates in UAE [LIVE DEMO](https://incandescent-profiterole-345c12.netlify.app).
 
 ![Design preview for the Minimum-Living-Cost application](https://github.com/Heba-WebDev/Minimum-Living/blob/main/public/preview.png?raw=true)
 
