@@ -70,7 +70,7 @@ export default function Flexibility() {
           roommate finder option. We provide you the flexibility that you most
           desire.
         </p>
-        <Link to="properties" className="w-1/2 mx-auto max-w-[158px] mt-2">
+        <Link to="properties" className="md:w-1/2 mx-auto max-w-[158px] mt-2">
           <span
             className="bg-red-500 text-white py-2 px-4 rounded-lg
              text-sm"

@@ -32,7 +32,7 @@ export default function Search(props) {
     exit={{opacity: 0}}
     >
       <div className="grid container mx-auto md:max-w-3xl lg:max-w-5xl md:w-3/4 py-14">
-        <div className="flex justify-between items-center">
+        <div className="flex flex-wrap gap-1 justify-between items-center">
           <h2 className="text-black font-bold text-lg md:text-xl lg:text-2xl">
             <span className="border-b-2 border-b-red-500">List O</span>f
             Properties
