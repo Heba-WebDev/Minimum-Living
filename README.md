@@ -1,10 +1,12 @@
 # Minimum Living Cost
 
-An application to show rental real estates in UAE [LIVE DEMO](https://github.com/facebook/create-react-app).
+An application to show rental real estates in UAE [LIVE DEMO](./preview.png).
+
+![Design preview for the Minimum-Living-Cost application](public/Screenshot 2023-02-10 at 3.53.49 AM (2).png)
 
 ## Langauges and technologies
 
-This application was built with React Js, React router and Tailwind CSS. Other libraries used: React icons.  Warrning: the data that is shown is a dummy data.
+This application was built with React Js, React router, Framer Motion and Tailwind CSS. Other libraries used: React icons.  Warrning: the data that is shown is a dummy data.
 
 ## Application Features 
 
