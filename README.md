@@ -2,7 +2,7 @@
 
 An application to show rental real estates in UAE [LIVE DEMO](./preview.png).
 
-![Design preview for the Minimum-Living-Cost application](public/Screenshot 2023-02-10 at 3.53.49 AM (2).png)
+![Design preview for the Minimum-Living-Cost application](./preview.png)
 
 ## Langauges and technologies
 
